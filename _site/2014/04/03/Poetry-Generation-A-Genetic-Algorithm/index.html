@@ -1,0 +1,227 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Poetry Generation: A Genetic Approach</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Poetry Generation: A Genetic Approach</h1>
+
+<hr>
+<h2>Why make a Computer write poetry?</h2>
+
+<p>Imagine a computer that could compose its own literature. Write its own books, its own poetry, make its own art, its own movies. This sci-fi vision of a computer is something we can barely wrap our heads around. So, how come so many computer theorists are interested in the above topic?</p>
+
+<p>Uptil now computers are glorified calculators. You give them a set of instrctions and they process the set. Sure, they're getting better and faster at doing that but they are still very low in the evolutionary ladder in terms of actual brain usefulness. Computer creativity argues however that with the right set of algorithms. This will change the way we interact and even perceive computers.</p>
+
+<p>However, we're still way behind in the creativity race. Poetry generation seemed a good a place as any to start.</p>
+
+<p>Poetry generation has been attempted several times by computer scientists. When generating a poem one has to consider two major aspects, the content and the form. In terms of content the program needs to consider its ability to create a story, stick to a topic and comprehend what it is saying. In terms of form the program should consider rhyme, meter and stress. Taking into consideration all these factors most of the systems produced till date have been wanting.</p>
+
+<div class='row'>
+<div class='medium-6 columns'>
+<img src='http://localhost:4000/assets/2014-04-03/rabindranath_tagore.jpg' />
+</div>
+<blockquote class='medium-6 columns' style="margin-top:50px">
+<i>Where the mind is without fear<br />
+And the head is held high,<br />
+Where knowledge is free.<br />
+Where the world has not been broken up into fragments by narrow domestic walls.<br />
+Where words come out from the depth of truth,<br />
+where tireless striving stretches its arms toward perfection.<br />
+Where the clear stream of reason has not lost it's way<br />
+Into the dreary desert sand of dead habit.<br />
+Where the mind is led forward by thee<br />
+Into ever widening thought and action.<br />
+In to that heaven of freedom, my father,<br />
+LET MY COUNTRY AWAKE!<br /></i>
+- Gitanjali, Rabindranath Tagore
+</blockquote>
+
+</div>
+
+
+<p><br /></p>
+
+<h2>How to make a Computer Write poetry?</h2>
+
+<p>I'm just going to lay out my method for writing poetry. Lets hope this might be useful to someone someday.
+It relies heavily on existing poetry for its database, as well as user input.</p>
+
+<p>Lets go through the algorithm step by step</p>
+
+<blockquote><p><strong>Training phase 1</strong></p>
+
+<ol>
+<li>Take input poetry from your corpus of poems. Each needs to have a specific title (in my case it's abstract nouns like love and death)</li>
+<li>Store those lines as input lines by replacing the subject, and all nouns, verbs and adjectives</li>
+</ol>
+
+
+<p><strong>Training phase 2</strong></p>
+
+<ol>
+<li>Using an input topic we train on the topic by creating a set of sentences about the poem and make the user rate each sentence according to correctness alone</li>
+<li>How do we get those sentences? Remember the templates from <code>Training phase 1</code>. Taking them we replace the words in them to produce a potential line. We also keep mixing in templates from other topics.</li>
+<li>If this is done for long enough we have a large group of potential lines for any poem we will produce.</li>
+</ol>
+
+
+<p><strong>Testing and Retraining</strong></p>
+
+<ol>
+<li>To create a poem choose a set of sentences from the database and combine them. Make them fit a rhyme scheme and meter.</li>
+<li>Now take a rating from the user again which affects not only each sentence score but also the position of the sentence in the poem</li>
+<li>This will cause the poem to associate certain lines more with their position in the poem</li>
+</ol>
+</blockquote>
+
+<h3>A Genetic Algorithm</h3>
+
+<p>A genetic algorithm solves a problem by a continually mutating and combining has a set of unique <em>children</em>. Randomly combining the genes of these children it produces a possible solution. Based on a fitness function the solution is judged to be fit or not. The most fit solutions are combined and mixed to produce the next set of children.</p>
+
+<p>In this respect our solution seems to follow the paradigm of a genetic algorithm. The set of templates can be considered the chilren. The mixing of a good template, a crossover and the addition of templates not on the topic, mutation. The fitness function is what the user perceives to be a good sentence for the poem.</p>
+
+<p>The rating increasing will cause the most fit lines to occur more frequently in the poem. Thus we consider this a genetic approach to poetry generation.</p>
+
+<div class='row'>
+<blockquote class='medium-6 columns' style="margin-top:50px">
+<i>If you can make one heap of all your winnings<br />
+And risk it on one turn of pitch-and-toss,<br />
+And lose, and start again at your beginnings<br />
+And never breathe a word about your loss;<br />
+If you can force your heart and nerve and sinew<br />
+To serve your turn long after they are gone,<br />
+And so hold on when there is nothing in you<br />
+Except the Will which says to them: "Hold on!"<br /></i>
+- If, Rudyard Kipling
+</blockquote>
+<div class='medium-6 columns'>
+<img src='http://localhost:4000/assets/2014-04-03/kipling.jpg' />
+</div>
+</div>
+
+
+<p><br /></p>
+
+<h3>The Negative Points Of This Algorithm</h3>
+
+<p>This algorithm has several limitations and failings that prevent it from being truly intelligent.</p>
+
+<ol>
+<li>It cannot have continuity in the lines of the poem. Each line is considered a seperate entity which is not how poets write</li>
+<li>It cannot infer completely new sentences and relies heavily on the templates given</li>
+<li>After much training we found that it wasn't generating as many good lines as we thought. The process of random replacement tends to push only the original lines inputed to the top</li>
+<li>The computer has no sense of the gramar required to produce a sentence and hence fails to do so.</li>
+</ol>
+
+
+<h3>Conclusion: Can This Be Considered Creative</h3>
+
+<p>This system shows promise as a poetry generation system. However, Creativity is uptil now inherently human. Human poets have are able to appreciate their poetry. They can judge the aesthetic value of their work and choose to continue working or publish it. So far our system, with its empirical generation, cannot even begin to emulate the thought process of a human poet. Hence, I do not believe it could be considered creative.</p>
+
+<i>03 Apr 2014 </i>
+</div>
+</body>
+</html>

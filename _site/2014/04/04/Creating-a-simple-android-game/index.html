@@ -1,0 +1,190 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Creating a Simple Android Game</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Creating a Simple Android Game</h1>
+
+<hr>
+<p>Recently, I have started programming in Android again after nearly a 3 year break. I thought I would start by creating a simple game and making it into a tutorial.</p>
+
+<h2>1. The basics behind making a game</h2>
+
+<p>Android consists of pages called Acitvities. An Activity represents one user interface and one significant portion of logic. For example, a simple game can be into 3 major activities</p>
+
+<ol>
+<li>The opening Activity consisting of the logo and maybe a play button and settings</li>
+<li>The game itself</li>
+<li>The end-game activity consisting of a replay button and score</li>
+</ol>
+
+
+<p>All of these activities will contain components called Views inside. Views can be anything from a textbox to a button. A group of views make up an activity.</p>
+
+<p>For the opening and end-game activity we will use some of these simple views like Buttons and Images.</p>
+
+<p>For the actual game activity however we're going to need to create our own custom view (for most games at least).
+This custom view will act like a blank Canvas. We keep drawing the entire game layout on the Canvas and refreshing at the appropriate moments.</p>
+
+<p>Before we start on the opening or end-game activities lets focus on the game activity and custom view.</p>
+
+<h2>2. Building the Game Activity and Custom View</h2>
+
+<p>Assuming you have android up and running create a new Android project in Eclipse</p>
+
+<h3>2.0 Create a New Android Project</h3>
+
+<p>Click File > New Android Application Project</p>
+
+<p><img src='http://localhost:4000/assets/2014-04-04/new project.png' /></p>
+
+<p>Click Next and then Finish.
+You should have a basic android project up and running.</p>
+
+<p>Now we have to build our game Activity will come in 3 components</p>
+
+<ol>
+<li>Building the Custom View</li>
+<li>Building the XML for the Activity</li>
+<li>Building the Activity itself</li>
+</ol>
+
+
+<h3>2.1Building the Custom View</h3>
+
+<p>Building a Custom view is done by simply extending the <code>View</code> class in android. The <code>View</code> class contains one method that must be specified called <code>onDraw(Canvas c)</code>. When this method is called the view will be drawn on the Canvas. (The canvas is an empty element that covers the area specified in your XML).</p>
+
+<p>Games, however continually update their Canvas. This will be controlled by a method called <code>invalidate</code>. When <code>invalidate</code> is run on the view, the <code>onDraw</code> method is rerun. Thus if we keep calling <code>invalidate</code> according to a Frame Rate we can create a game that runs as fast as that fram rate.</p>
+
+<p>(this code will however be done in the activity. I specified the theory here.)</p>
+
+<p>So now lets go about building our View</p>
+
+<h3>2.2Building the XML for the Activity</h3>
+
+<p>Well for the game activity we'll create our own <code>activity.xml</code></p>
+
+<p>This basically will contain any layout (I've used a LinearLayout but it doesn't matter as the View takes up the whole screen) and a XML element of our custom view (inside the package you require). You see we've put a drawable background on the view.</p>
+
+<pre><code>&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" &gt;
+
+&lt;com.cjds.dactyl.GameBoard
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/back"
+            android:id="@+id/the_canvas"/&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<h3>2.3 Building the Activity Itself</h3>
+
+<i>04 Apr 2014 </i>
+</div>
+</body>
+</html>

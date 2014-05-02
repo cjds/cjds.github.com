@@ -1,0 +1,19 @@
+---
+title: Home
+layout: main
+---
+
+<div class='columns large-8 large-offset-1 small-12'>
+<h1>Posts</h1>
+<ul>
+
+{% for post in site.posts  %}
+<li>
+     <a href="{{ post.url }}">{{ post.title }}</a>
+    <i style='font-size:0.8em'>{{ post.date | date_to_long_string }}</i>
+
+</li>
+{% endfor %}
+
+</ul>
+</div>

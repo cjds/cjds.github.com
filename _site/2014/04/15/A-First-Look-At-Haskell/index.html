@@ -1,0 +1,175 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>A First look at Haskell</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>A First look at Haskell</h1>
+
+<hr>
+<h2>What is Haskell?</h2>
+
+<p>A functional programming language with a bunch of cool features. If you want to know why to learn this read <a href="">here</a></p>
+
+<h2>Start By Installing</h2>
+
+<p>To work with Haskell you need : A Haskell Compiler
+The simplest way to get started is by downloading the Haskell Platform <a href="http://www.haskell.org/platform/">here</a></p>
+
+<h2>Start By Trying it out</h2>
+
+<p>First lets see if it works.
+Go to the console (command prompt) and type <code>ghci</code></p>
+
+<pre><code>GHCi, version 7.6.3: http://www.haskell.org/ghc/  :? for help  
+Loading package .... //some packages
+Prelude&gt;  
+</code></pre>
+
+<p>If you see that you have successfully installed Haskell.
+Now lets type some commands and see what we get</p>
+
+<pre><code>Prelude&gt; 6+3
+9
+Prelude&gt;  9/3
+3
+</code></pre>
+
+<h2>First functions</h2>
+
+<p>Okay now lets move on from writing command line codes to our first function.
+Create a file named <code>abc.hs</code> and save it in any folder. Enter this in the file. It is basically a function called double me that takes x and returns (x+x)</p>
+
+<pre><code>doubleMe x = x + x  
+</code></pre>
+
+<p>Now <code>cd</code> to the folder where you saved it using the Command Prompt. Run <code>ghci</code>. Once inside the GHCI, run <code>:l abc</code></p>
+
+<pre><code>Prelude&gt; :l abc  
+[1 of 1] Compiling Main             ( abc.hs, interpreted )  
+Ok, modules loaded: Main.  
+Prelude&gt; doubleMe 4
+8  
+Prelude&gt; doubleMe 3.2 
+6.4 
+</code></pre>
+
+<h2>If, Then, Else</h2>
+
+<p>The if else condition can be written simply in Haskell. First specify the condition. Then mention what is to be done if true. The difference between Haskell and imperitive languages (say, Java) is that Haksell must specify the else condition.</p>
+
+<pre><code>doubleSmallNumber x = if x &gt; 100  
+                    then x  
+                    else x*2   
+</code></pre>
+
+<h2>Conclusion</h2>
+
+<p>We learned how to install haskell and write our first Haskell functions. More to be done in <a href="">part 2</a></p>
+
+<i>15 Apr 2014 </i>
+</div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Maven in 15 minutes</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Maven in 15 minutes</h1>
+
+<hr>
+<h2>1. What is Maven</h2>
+
+<p>Maven is a Project Management tool. It allows you to keep track of the releases and documentation of your project and use other projects in your project(dependencies). It wraps all this information up in an XML file called the Project Object Model (POM)</p>
+
+<h2>2. Why Use Maven</h2>
+
+<p>So, why use Maven when we already have excellant version control systems like GIT.</p>
+
+<p>The main benifit of Maven is transitive dependencies. Suppose I have Project A that requires Project B to work. We can add B directly to the POM and Maven will build it for us.
+Now, Suppose B requires Project C. We don't have to do anything. When compiling B, Maven automatically will add C to our Build Path</p>
+
+<p>If you want to look at why people use Maven take a look <a href="http://maven.apache.org/benefits-of-using-maven.html">here</a></p>
+
+<h2>3. Installing Maven</h2>
+
+<p>Download Maven from this <a href="http://maven.apache.org/download.cgi">link</a> and extract it from its zip folder.</p>
+
+<p>Computer > Properties > Advanced System Settings > Environment Variables</p>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/environment%20variables.png' /></p></div>
+
+<ol>
+<li>Add a new Variable name : <code>JAVA_HOME</code> value: <code>{JAVA_PATH}</code>, for example <code>C:\Program Files\Java\jdk1.6</code></li>
+<li>Add a new Variable name : <code>MAVEN_HOME</code> value: <code>{MAVEN_PATH}</code>, for example <code>C:\Program Files\maven</code></li>
+<li>Go to the PATH variable and add this to the end (after another <code>;</code>) <code>{MAVEN_PATH}\bin</code></li>
+</ol>
+
+
+<p>Now test by going to Command Prompt and typing <code>mvn</code>. If the command prompt does not say <code>'mvn' is not recognized</code> then its installed correctly</p>
+
+<h2>4. Create a Maven Project</h2>
+
+<p>To create a Maven Project we use the following command</p>
+
+<pre><code>mvn archetype:generate -DgroupId={YOUR_PACKAGE} -DartifactId={YOUR_NAME} -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</code></pre>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/maven%20new%20project.png' /></p></div>
+
+<ol>
+<li><code>DarchetypeArtifactId</code> : Defines the basic archetype the project will use. You can read more about it <a href="http://maven.apache.org/guides/introduction/introduction-to-archetypes.html">here</a></li>
+<li><code>DinteractiveMode</code> : If set to true it will ask you for all the options not specified while running the command. If set to false it will assume them</li>
+</ol>
+
+
+<h2>5. Maven and Eclipse</h2>
+
+<p>To allow your new Maven Project to be used in Eclipse you have to</p>
+
+<ul>
+<li>Eclipsify your project</li>
+</ul>
+
+
+<p>Go to the project folder in the command line and run this command : <code>mvn eclipse:eclipse</code></p>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/maven%20eclipsify.png' /></p></div>
+
+<ul>
+<li>Set the <code>M2_REPO</code> in Eclipse</li>
+</ul>
+
+
+<p>This is called a classpath variable. Whenever you have a maven project in eclipse you need dependencies from you Maven Repo. This will set that variable. To do this type this command in the Command Line</p>
+
+<pre><code>mvn -Declipse.workspace="your Eclipse Workspace" eclipse:configure-workspace
+</code></pre>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/m2_repo.png' /></p></div>
+
+<ul>
+<li>Now just import your project into the workspace and your done.</li>
+</ul>
+
+
+<p>In Eclipse File > Import > General > Existing Projects into Workspace > Select project folder > Finish.</p>
+
+<h2>6. Done</h2>
+
+<p>Now you have a fully functioning Maven project in Eclipse. You can edit the <code>pom.xml</code> to pull dependencies and update your version.</p>
+
+<i>05 Apr 2014 </i>
+</div>
+</body>
+</html>

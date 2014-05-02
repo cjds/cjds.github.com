@@ -1,0 +1,214 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Jekyll, Foundation and Grunt</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Jekyll, Foundation and Grunt</h1>
+
+<hr>
+<h2>What is Grunt</h2>
+
+<p>Grunt is a Javascript library that runs via Node.js. It allows you to automate all your production tasks into one command.
+(for example minifying the JS and CSS, compiling the CSS from SASS, running the server etc.)</p>
+
+<p>All of these things are run by the plugins that are made for Grunt.</p>
+
+<p>This allows me to build my Jekyll, compile my Foundation (via Compass) and compile pygments using a single command <code>Grunt</code>. This command will run a file called a <code>Gruntfile.js</code>.  This is useful because there are probably going to be a few more libraries before this goes online. Thus I can compile the entire site with one command.</p>
+
+<h2>How to Grunt</h2>
+
+<p>First Install Node.js from <a href="#">here</a></p>
+
+<p>Assuming You have it download Grunt by going to your folder in the command line and writing</p>
+
+<pre><code>npm install grunt
+</code></pre>
+
+<p>Now we need some plugins. I'm going to use the <code>watch</code> plugin to check when my files are changed, the <code>compass</code> plugin to compile Compass and the <code>shell</code> plugin to run the Jekyll commands from the Grunt file</p>
+
+<p>Install the 3 plugins with the following commands (when in your project directory)</p>
+
+<ol>
+<li><code>npm install grunt-contrib-watch</code></li>
+<li><code>npm install grunt-contrib-compass</code></li>
+<li><code>npm install grunt-contrib-shell</code></li>
+</ol>
+
+
+<h2>My Gruntfile.js</h2>
+
+<pre><code>// Gruntfile.js
+module.exports = function(grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        compass: {
+            dist: {
+                options: {
+                    sassDir: 'sass',
+                    cssDir: 'stylesheets'
+                }
+            }
+        },
+        shell: {
+            jekyllBuild: {
+                command: 'jekyll build'
+            },
+            jekyllServe: {
+                command: 'jekyll serve'
+            }
+        }
+    });
+
+
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+
+
+
+    grunt.registerTask('watch:test', function() {
+        // Configuration for watch:test tasks.
+        var config = {
+            options: {
+            interrupt: true
+        },
+        post: {
+            files: [
+                '_posts/*.md',
+                '_posts/*.html',    
+                '_includes/*.html',
+                '_layouts/*.html',
+                '_config.yml',
+                'index.html'                
+            ],
+              tasks: ['shell:jekyllBuild','shell:jekyllServe']
+            },
+        layout:{
+            files:[
+                'scss/*'
+            ],
+            tasks: ['compass']
+            }
+          };
+
+          grunt.config('watch', config);
+          grunt.task.run('watch');
+    });
+
+    grunt.registerTask('default', ['watch:test']);
+};
+</code></pre>
+
+<p>Notice if I change my SCSS Compass will compile. Otherwise it will just run the Jekyll Build and serve commands.
+After this just go to your projects folder and type <code>grunt</code></p>
+
+<h2>Negatives of Grunt</h2>
+
+<p>It slows things down. <code>jekyll sever --watch</code> is a much better alternative while writing. But for making a production ready version Grunt is the way to go</p>
+
+<i>09 Apr 2014 </i>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/foundation.min.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>{{page.title}}</title>
+</head>
+<style>
+h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ img:hover{
+	cursor:pointer;
+	opacity:0.6;transition: all 1s;
+}
+
+.hi{
+	border-left:1px solid #555;
+	padding:6px;
+}
+
+.line{
+/*height:100px;*/
+overflow:hidden;
+transition: all 1s;
+padding:0px;
+margin-bottom:40px;
+}
+
+.linetext{
+
+width:30%;
+font-size:0.8em;
+margin:0px;
+padding-top:3px;
+padding-left:7px;
+padding-right:7px;
+font-style:italic;
+font-color:#777;
+border:1px #444 solid;
+border-bottom:none;
+display:inline-block;vertical-align:top;
+transition: all 1s;
+}
+
+
+
+.title hr{
+	margin:0px;
+	padding:10px;
+	border-top:5px #333 solid;
+}
+</style>
+<body>
+{% include header.html %}
+<body>
+
+{{content}}
+<i>{{ page.date | date_to_string}} </i>
+
+</body>
+</html>

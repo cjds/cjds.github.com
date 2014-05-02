@@ -1,0 +1,10 @@
+{
+  "name": "Example",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "grunt-shell": "^0.6.4",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

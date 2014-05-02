@@ -1,0 +1,220 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Install and Use Jekyll on Windows</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Install and Use Jekyll on Windows</h1>
+
+<hr>
+<p><img src="http://localhost:4000/assets/2014-04-02/jekyll+windows.jpg" alt="" /></p>
+
+<h2>What is Jekyll</h2>
+
+<p>Jekyll is a static platform for blogging. It allows you to write your blog and upload a static site online.</p>
+
+<h2>Why use Jekyll</h2>
+
+<p>The reason I decided to try out Jekyll is because its posts can be written in Markdown. However the fact that it compiles into plain old HTML is definitely a bonus. This means the pages will be served quickly and there is practically no way to break into it. Jekyll can also be tested locally and is highly customizable.</p>
+
+<h2>Installing Jekyll</h2>
+
+<p>Jekyll was created in Ruby and requires some command line code to get it running but is definitely worth it. I will installing Jekyll on a Windows 8 machine. (but this is applicable to any Windows)</p>
+
+<h3>Install Ruby and the Ruby DevKit</h3>
+
+<p>First you need to install Ruby and the Ruby DevKit from <a href="http://rubyinstaller.org/downloads/">this link</a></p>
+
+<ol>
+<li>Download the Ruby installer and follow the steps to install</li>
+<li>Now you need to get the ruby devkit. Get the appropriate version for the version of Ruby download. And extract it.
+
+<ul>
+<li>Open Command Prompt with Ruby (from the start menu)</li>
+<li>CD to the folder in which the Ruby DevKit was extracted</li>
+<li>Type <code>ruby dk.rb init</code></li>
+<li>Type <code>ruby dk.rb install</code></li>
+</ul>
+</li>
+</ol>
+
+
+<h3>Install Jekyll, RDiscount and WDM</h3>
+
+<p>Now you need to install Jekyll and RDiscount</p>
+
+<div class="big"><p><img src="http://localhost:4000/assets/2014-04-02/installing-jekyll.PNG" alt="" /></p></div>
+
+<ol>
+<li>Start command prompt with Ruby</li>
+<li>Type <code>gem install jekyll</code></li>
+<li>Type <code>gem install rdiscount</code></li>
+<li>Type  <code>gem install wdm</code></li>
+</ol>
+
+
+<h2>Time to start creating our blog</h2>
+
+<p>Now that we got Jekyll running its time to create a new blog</p>
+
+<p>Go to the folder you wish to store your blog in and create a folder structure as below.</p>
+
+<div class="big"><p><img src="http://localhost:4000/assets/2014-04-02/initializing%20folders.PNG" alt="" /></p></div>
+
+<p>Create 3 folders</p>
+
+<ul>
+<li><p>_posts: to store the markdown and HTML to store your posts posts</p></li>
+<li><p>_layouts : to store layouts. This will be the markup that will be like a template for your blog</p></li>
+<li><p>_includes : lets say you want to make a header and footer and stuff</p></li>
+</ul>
+
+
+<h3>Creating your Configuration file</h3>
+
+<p>Create a new file called <code>_config.yml</code>. This file will be written in the YAML format. Fill the config file with the following</p>
+
+<pre><code>name: "Carl's Blog"
+url: "http://localhost:4000"
+paginate: 10
+markdown: rdiscount
+permalink: pretty
+</code></pre>
+
+<p>The URL <code>http://localhost:4000</code> will be used to access our blog in the localhost. The markdown will be handled by the rdiscount gem.</p>
+
+<h3>Creating your first post</h3>
+
+<p>Now lets create our first post. Go to the <code>_posts</code> folder and in a file with the title <code>YYYY-MM-DDD-post-name.md</code>
+<code>YYYY-MM-DD</code> is the post date. The name is the post slug (like a title) and <code>.md</code> signifies that its written in <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a></p>
+
+<pre><code>---
+title: My first post
+---
+
+Install and Use Jekyll on Windows
+Hello World. This is my first post on my **awesome** __Jekyll__ blog
+</code></pre>
+
+<p>The top part contained in the <code>---</code> is called the framing information. Things like categories, tags etc. can be specified as seen here.</p>
+
+<h3>Testing your first post</h3>
+
+<ul>
+<li>Open command prompt with Ruby and <code>cd</code> to the location of the blog</li>
+<li>Type <code>Jekyll build</code>. You should see an _site folder created at the route. This builds your site and converts it to static HTML.</li>
+<li>Type <code>Jekyll serve</code>. This should compile your blog and start the server where you can access it.</li>
+<li>Go to http://localhost:4000</li>
+</ul>
+
+
+<div class="big"><p><img src="http://localhost:4000/assets/2014-04-02/first%20post.PNG" alt="" /></p></div>
+
+<p>Hopefully you have your blog up and running. I'll be doing a follow up post covering the styles and templating to make your blog look good.</p>
+
+<i>02 Apr 2014 </i>
+</div>
+</body>
+</html>

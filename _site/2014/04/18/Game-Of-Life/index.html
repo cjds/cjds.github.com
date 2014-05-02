@@ -1,0 +1,145 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Conway's Game Of Life</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Conway's Game Of Life</h1>
+
+<hr>
+<h2>Introduction</h2>
+
+<p>Conway's game of life was invented by the mathematician John Conway in 1970. What's awesome about it? Touted as a zero player game with four basic rules this game has been used to prove several things including proving that the game is Turing complete (i.e. can complete any computation) and using it people have had insights into the origin of Life, The Universe and Everything</p>
+
+<h2>Rules</h2>
+
+<p>The game has a few really simple rules.</p>
+
+<p>The Game of Life is played within a grid of squares. A few live cells are placed as initial configuration and as we go
+* Live Cell  &lt; 2 Live neighbours -> dead, under-population.
+* Live Cell  > 3 Live neighbours -> dead, overcrowding.
+* Other Live Cells continue living
+* If empty cell = 3 Live neighbours, new child is born</p>
+
+<p> The rules continue to be applied repeatedly to create further generations.</p>
+
+<h2>Why is it so awesome</h2>
+
+<p>The cool thing is a simple configuration could produce runayway expansion or simply die off. And, according to the creator not even he can spot the difference. The patterns sometimes are complex and beautiful.</p>
+
+<p>However the really cool part starts when a few mathematicians started producing logic gates using different confugurations of the game. They took it further and created a fully Turing Complete Machine. A life mimicking structure used to create a Turing Machine that can potentially handle any code. Eerily sounds like artificial life. The interesting part is a universe with such simple rules could be used to create complete computres.</p>
+
+<h2>What has it been used to prove</h2>
+
+<p>Considering this is a simulation of basic life forms (super basic). Maybe Turing Machines can be a basis for us understanding how our brains work. That's still a long time coming and a large leap from this really awesome Math game.</p>
+
+<p>Here are some resources about it</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a></p>
+
+<i>18 Apr 2014 </i>
+</div>
+</body>
+</html>

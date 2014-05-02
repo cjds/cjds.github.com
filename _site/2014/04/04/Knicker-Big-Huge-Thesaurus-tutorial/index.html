@@ -1,0 +1,206 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+	<title>Tutorial: Using Wordnik and Big Thesaurus API</title>
+</head>
+<style>
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 0px auto;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+ p{
+ 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif
+ 	line-height:120%;
+ }
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-8 large-offset-2 post-div'>
+<h1>Tutorial: Using Wordnik and Big Thesaurus API</h1>
+
+<hr>
+<p>Wordnik and Big Huge Thesaurus are two APIs on the net which can be used in NLP projects. Both of them can be connected to by a simple request.</p>
+
+<h2>1. Wordnik</h2>
+
+<p><a href="http://wordnik.com">Wordnik</a> is a website that allows you to access a lot of information about words. It allows you to get defintions, synonyms, antonyms, uses in sentences, and pronounciation of particular words.</p>
+
+<p>The  <a href="https://github.com/jeremybrooks/knicker">Knicker API</a> created by Jeremy Brooks is a wonderful Java package that allows you to access Wordnik.</p>
+
+<p>This is a quick tutorial on the Knicker API how to use it.</p>
+
+<h3>1.1 Sign up for a Wordnik API key.</h3>
+
+<p><a href="http://developer.wordnik.com/">Click the link here</a>, sign up for Wordnik, then tell them about your project and why you want to use it.</p>
+
+<p>If you're really lazy and want to test out the API you can use my key <code>70538348db6b42e43a5181e32070feebc0b303e293ed13a97</code> (but I would prefer you didn't)</p>
+
+<h3>1.2 Including the Knicker API in an eclipse project</h3>
+
+<p>The Knicker API is a Java project that you can include in one of two ways.</p>
+
+<ol>
+<li>Clone the source code directly in the <code>src</code> folder of your project</li>
+<li>Start a Maven project and include the dependancy</li>
+</ol>
+
+
+<h3>1.3 What can you do with the Knicker API and Wordnik</h3>
+
+<p>To start using the Knicker API you have to set your API key as a system property like so</p>
+
+<pre><code>System.setProperty("WORDNIK_API_KEY", "YOUR_KEY");
+</code></pre>
+
+<p>The API is split into 4 major classes.</p>
+
+<ol>
+<li><code>WordApi</code> for accessing the actual words</li>
+<li><code>AccountApi</code> for accessing details about your account</li>
+<li><code>WordsApi</code> which has features for getting random words and reverse dictionary.</li>
+<li><code>WordListApi</code> which allows you to access user created alists as well as some other features.</li>
+</ol>
+
+
+<p>Now you can call the required method with a static call to the API.</p>
+
+<p>For example in case we need to get all the synonyms of earth</p>
+
+<pre><code>try {
+    List&lt;Related&gt; list=WordApi.related("earth", false, EnumSet.of(RelationshipType.synonym),100);
+    for(Related r : list){
+        for(String s :r.getWords())
+            System.out.println("hi");
+    }
+
+} 
+catch (KnickerException e) {
+
+        e.printStackTrace();
+}
+</code></pre>
+
+<h2>2. Big Huge Thesaurus</h2>
+
+<p>Big Huge Thesaurus is another interesting list. When you access a word it gives you the synonyms antonyms and their parts of speech )noun,verb etc.).
+Though Big Huge Thesaurus has much less data than Wordnik it is useful because of the parts of speech. For example the word water is both a noun and a verb and Big Huge Thesaurus can give you synonyms of only one or the other.</p>
+
+<p>Big Huge Thesaurus does not have a Java API (I intend to make a simple wrapper, will post when I do). You can make calls directly to the server and it can return the data in 3 formats; XML, JSON or plain text.</p>
+
+<pre><code>http://words.bighugelabs.com/api/{version}/{api key}/{word}/{format}
+</code></pre>
+
+<p>This again needs an API key to access. You can get one over <a href="http://words.bighugelabs.com/getkey.php">here</a>. Again, if your lazy mine is <code>9a0d1e46117e2bdb3bf6e1a1568faa3e</code></p>
+
+<p>Make a URL call as follows and read the response line by line</p>
+
+<pre><code>//NOTE: this is for the plain text format. For JSON or XML you will need libraries to pass the data.
+// It will probably be faster to access the data in those formats though as you get a more organized structure.
+try{
+        URL to =new URL ("http://words.bighugelabs.com/api/2/9a0d1e46117e2bdb3bf6e1a1568faa3e"+URLEncoder.encode("earth", "UTF-8")+"/");
+
+        BufferedReader br=new BufferedReader(new InputStreamReader(to.openStream()));
+        String inputLine;
+
+        while((inputLine=br.readLine())!=null){
+            System.out.println(inputLine); // in the form noun|syn|world ..
+        }
+    }
+</code></pre>
+
+<p>So, these are two excellant web resources for information about words. Wordnik is a growing resource that continually adds more dictionaries and features to its data collection. Big Huge Labs offers quite a variety of things aside from the Big Huge Thesaurus.</p>
+
+<i>04 Apr 2014 </i>
+</div>
+</body>
+</html>
