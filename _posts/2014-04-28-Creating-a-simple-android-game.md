@@ -53,7 +53,15 @@ Games, however continually update their Canvas. This will be controlled by a met
 
 (this code will however be done in the activity. I specified the theory here.)
 
-So now lets go about building our View
+So now lets go about building our View. 
+
+We'll start by creating a class called GameBoard which extends the view class. Then create a constructor and override the views `onDraw` method. 
+
+    class GameBoard extends View{
+        public GameBoard(Context context, AttributeSet aSet) {
+            super(context, aSet);
+        }
+    }
 
 
 
@@ -69,7 +77,7 @@ This basically will contain any layout (I've used a LinearLayout but it doesn't 
     	android:layout_height="fill_parent"
     	android:orientation="vertical" >
     
-    <com.cjds.dactyl.GameBoard
+    <com.cjds.GameBoard
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/back"

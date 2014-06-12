@@ -1,11 +1,13 @@
 ---
-title: "The scary parts about Google Single Sign On"
+title: "Google Single Sign On Makes Me Nervous"
 layout: post
 ---
 
-Google has had their single sign on policy for a while now, and it keeps getting more ubiquitous each day. Their latest incarnation sports a home page which says "One Account. All of Google". It keeps your notifications, your YouTube videos, your e-mails, pretty much everything you do on the internet.
+Gone are the days when every Google service was separate and unique and not interconnected. Nowadays, in our hyperconnected phone access based world single sign ons are only a tap away
 
-While Reddit might call itself the Front Page of the Internet, Google are the company that own the paper. They leave thier rivals far behind both in their core service (search) as well as videos.
+Google has had their single sign on policy for a while now, and it keeps getting more ubiquitous each day. Their latest incarnation sports a home page which says "One Account. All of Google". It keeps your notifications, your YouTube videos, your e-mails, pretty much everything you do on the internet. 
+
+While Reddit might call itself the Front Page of the Internet, Google are the company that own the paper. Google services provide us with the ability to do pretty much anything and most of it brilliantly (except you Google+). Youtube, Google Books, the Play Store, Maps. All those services can be accessed one one machine with one password. Its fair enough to say that Google has a ton of harmless and yet potentially horrible information about it.
 
 The question is what's the real problem in having a single sign on policy on your devices. I will answer the question with an anecdote.
 
@@ -15,6 +17,6 @@ Our web history is assumed to be private, much like what we watch on TV or the p
 
 We are forgetting at this point how much Penny knows about Aaron. She has access to what videos he watches, the things he searched for, his chats, messages etc. In the future she might know the temperature of his home (Google acquisition of Nest) or the time he reaches home from work (Google Now comes to Google Chrome).
 
-Living in a world of single sign-on puts a lot more information at risk with the change of a single password. Your password is quite literally the key to everything in your life. 
+One could validly say that it was Aaron's fault for not signing out of his Google account but that is beside the point. Humans are quite capable of mistakes. Unfortunately, as one company continues to grow we become more and more dependant on it. 
 
-That makes me pretty nervous.
+Living in a world of single sign-on puts a lot more information at risk with the change of a single password. Your password is quite literally the key to everything in your life. 

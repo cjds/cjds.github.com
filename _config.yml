@@ -1,7 +1,7 @@
 name: "Carl's Blog"
 description: ""
 
-url: "http://cjds.github.io"
+url: "http://localhost:4000"
 
 paginate: 10
 

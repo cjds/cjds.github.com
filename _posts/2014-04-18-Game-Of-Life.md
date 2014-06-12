@@ -13,6 +13,7 @@ Conway's game of life was invented by the mathematician John Conway in 1970. Wha
 The game has a few really simple rules. 
 
 The Game of Life is played within a grid of squares. A few live cells are placed as initial configuration and as we go 
+
 * Live Cell  < 2 Live neighbours -> dead, under-population.
 * Live Cell  > 3 Live neighbours -> dead, overcrowding.
 * Other Live Cells continue living
