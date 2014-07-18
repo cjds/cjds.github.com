@@ -1,1 +1,332 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
 
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>Hebbian Learning in Java</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+/*
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 30px;
+ 	margin-bottom: 1px;
+
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<h1>Hebbian Learning in Java</h1>
+
+<hr>
+<p>Hebbian Learning is the simplest form aof a neural network I can describe. It is often described simply as "Neurons that fire together, wire together."</p>
+
+<p> Hebbian learning was proposed by Dr. Donal Hebb in the 1940s.</p>
+
+<blockquote><p>The idea behind Hebb Theory is that neurons that fire often to a stimulis will fire more strongly the next time the stimulus occurs
+ This ensures that the neurons learn because of repitition. It is also why we are so good at things we do repeatedly</p></blockquote>
+
+<h3>So how do we model it in a network</h3>
+
+<p> What we're basically doing is pattern learning. Present a series of inputs to the system. The most common patterns will produce the largest reaction by the system. This is a type of unsupervised learning. We don't tell the computer the right answer. During training we just present input and the computer guesses it during testing.</p>
+
+<p> ###Program
+ Well now we are testing with certain inputs
+ We're training with certain patterns and when we test will see of those patterns have higher firing rates.</p>
+
+<pre><code>[ 1 1 0 0 1]
+[ 1 1 0 0 1]
+[ 1 1 1 0 0]
+[ 1 1 0 0 1]
+[ 1 1 0 0 1]
+[ 1 1 1 0 0]
+[ 1 1 1 1 1]
+</code></pre>
+
+<p> Now you notice in the training data we always see the first two dimensions firing. So hopefully when we test we will see the same.
+ Highest scores for things starting with <code>[1 1]</code></p>
+
+<p> We're looking at a single layer network with no hidden layers, i.e. just input na d.</p>
+
+<pre><code>public class neuralnet{
+    public static void main(String a[]){
+        int training[][] =new int[][]{{1,1,0,0,1},
+                                      {1,1,0,0,1},
+                                      {1,1,1,0,0},
+                                      {1,1,0,0,1},
+                                      {1,1,0,0,1},
+                                      {1,1,1,0,0},
+                                      {1,1,1,1,1}};
+        Net net = new Net(5,training);
+        net.training();
+        net.testing(new int[]{1,1,0,0,0});
+        net.testing(new int[]{0,0,1,0,0});
+    }
+}
+class Net {
+
+    double n=0.1;
+    int training[][] =new int[5][]; 
+    Neuron neurons[]=new Neuron[5];
+
+    public Net(int noOfNeurons,int trainingdata[][]){
+        neurons=new Neuron[noOfNeurons];
+        for(int j=0;j&lt;neurons.length;j++){
+            neurons[j]=new Neuron();
+        }
+        training=trainingdata;
+    }
+
+    // dw= y*xi
+    public void training(){
+        for(int i=0;i&lt;training.length;i++){
+            int inputs[]= training[i];
+            double output=getNeuralNetOutput(neurons,inputs);   
+            //Update all the neurons
+            for(int j=0;j&lt;neurons.length;j++){
+                neurons[j].updateWeight(output*n*inputs[j]);
+            }
+        }
+    }
+
+    public double getNeuralNetOutput(Neuron[] neurons,int inputs[]){
+        //get all the outputs and add them together     
+        double output=0;
+        for(int j=0;j&lt;neurons.length;j++){
+            output+=neurons[j].getOutput(inputs[j]);
+        }
+        return output;
+    }
+
+    public void testing (int[] inputs){
+        System.out.println(getNeuralNetOutput(neurons,inputs));
+    }
+
+    class Neuron{
+        double w;
+
+        public Neuron(){
+            w=1;
+        }
+
+        public double getOutput(int x){
+            return x*w;
+        }
+
+        public void updateWeight(double update){
+            w+=update;
+        }
+    }
+}
+</code></pre>
+
+<hr>
+<i>30 Apr 2014 </i>
+</div>
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 ---
 title: "Companies are Being Built for the Money"
 layout: post
+categories: [thoughts]
 ---
 
 ##The Big Boys Of Tech

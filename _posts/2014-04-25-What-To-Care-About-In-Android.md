@@ -1,0 +1,33 @@
+---
+title: "5 things every designer should bother about in Android"
+layout: post
+---
+
+
+I've spent the last few days coming back to android after a two year break. It seems almost surprising how little it changed.
+So, I'm designing an android game which will be on the market soon. It took me about a day to finish the basic programming. 
+I've spent the next 3 weeks changing and improving the design. 
+
+I just thought I'd write a few things that occurred to me in the process of making this app.
+
+
+1. The Pause States
+Handle all the pause states.
+onPause onResume onDestroy everuthimg. Its annoying when you use the phone proplerlu and the app.doesn't seem to respond
+
+2. Font And Colour
+Too many apps stick to the default font. That font could is different for different phones. Its best if.you have a uniform font that everyone likes
+
+
+3. Uniformity is a Beautiful Thing
+Most apps have uniformity just like most.websites. but sometimes you run across an app.thats so incongruously connected that it makes you wonder why the designer did so many random things
+
+
+4. Sound, Animation: Only include it if its worth it
+Sounds, animation etc. Frankly though animation can feel good if used well I've never.understood.sound
+Tons of websites run fine without it.
+Its believe sound should be used for.getting the users attention. Not just for everything in the app
+
+
+5. Design Everything
+I hope someday everyone will see, it takes a minute to everything on the page and a year to undo whatever crap design you came up with in the minute.

@@ -1,6 +1,7 @@
 ---
 title: "Why Functional Programming"
 layout: post
+categories: [thoughts]
 ---
 
 ###What is Functional Programming
@@ -9,7 +10,7 @@ Most functional programming languages are different because they do not depend o
 
 
 > %image%
->![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/lambda.png)
+>![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/lambda.jpg)
 
 ###Why learn Functional Programming
 For me, the major draw of learning a FP language is:

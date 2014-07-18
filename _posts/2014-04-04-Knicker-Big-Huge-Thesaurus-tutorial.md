@@ -1,6 +1,7 @@
 ---
 title: "Tutorial: Using Wordnik and Big Thesaurus API"
 layout: post
+categories: [tutorial,nlp]
 ---
 
 Wordnik and Big Huge Thesaurus are two APIs on the net which can be used in NLP projects. Both of them can be connected to by a simple request. 
@@ -14,20 +15,20 @@ The  [Knicker API](https://github.com/jeremybrooks/knicker) created by Jeremy Br
 
 This is a quick tutorial on the Knicker API how to use it.
 
-###1.1 Sign up for a Wordnik API key. 	
+####1.1 Sign up for a Wordnik API key. 	
 
 [Click the link here](http://developer.wordnik.com/), sign up for Wordnik, then tell them about your project and why you want to use it.
 
 If you're really lazy and want to test out the API you can use my key `70538348db6b42e43a5181e32070feebc0b303e293ed13a97` (but I would prefer you didn't)
 
-###1.2 Including the Knicker API in an eclipse project
+####1.2 Including the Knicker API in an eclipse project
 
 The Knicker API is a Java project that you can include in one of two ways. 
 
 1. Clone the source code directly in the `src` folder of your project 
 2. Start a Maven project and include the dependancy
 
-###1.3 What can you do with the Knicker API and Wordnik
+####1.3 What can you do with the Knicker API and Wordnik
 
 To start using the Knicker API you have to set your API key as a system property like so
 
@@ -57,6 +58,9 @@ For example in case we need to get all the synonyms of earth
 			
 			e.printStackTrace();
 	}
+
+
+<br><br>
 
 ##2. Big Huge Thesaurus
 

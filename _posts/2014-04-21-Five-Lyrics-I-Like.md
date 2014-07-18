@@ -1,6 +1,7 @@
 ---
 title: "5 Lyrics I Like"
 layout: post
+categories: [about]
 ---
 <style>
 p{
@@ -35,7 +36,7 @@ _You may say I'm a dreamer_ lets hope I'm not the only one
 In My Life was always about reminiscing. Whenever I think of the way things were or how things seemed in the past I think of it. Always reminds me that _I know I'll never lose affection, For people and things that went before, I know I'll often stop and think about them, In my life I love you more._
 
 
-<iframe src="//player.vimeo.com/video/71308216" width="480" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+<iframe width="480" height="360" src="//www.youtube.com/embed/Zicw_dVwhfM" frameborder="0" allowfullscreen></iframe>
 
 <br><br>
 ###Roll The Dice - Koufax
@@ -53,6 +54,5 @@ I won't bother talking about this one. I'll let Bob Dylan do it
 
 >There ain't too much I can say about this song except that the answer is blowing in the wind. It ain't in no book or movie or TV show or discussion group. Man, it's in the wind ...just like a restless piece of paper it's got to come down some  ...But the only trouble is that no one picks up the answer when it comes down so not too many people get to see and know
 	
-<iframe src="//player.vimeo.com/video/63141371" width="480" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
-
+<iframe width="640" height="360" src="//www.youtube.com/embed/3l4nVByCL44" frameborder="0" allowfullscreen></iframe>
 <br><br>

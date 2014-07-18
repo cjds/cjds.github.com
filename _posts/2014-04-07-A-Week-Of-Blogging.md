@@ -1,6 +1,7 @@
 ---
 title: "A Week Of Blogging"
 layout: post
+categories : [blog]
 ---
 
 I've been blogging every day for a week now, and have consequently found out a few things.

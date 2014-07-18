@@ -1,9 +1,8 @@
 name: "Carl's Blog"
 description: ""
 
-url: "http://localhost:4000"
-
+url: "http://cjds.github.io/"
+highlighter: none
 paginate: 10
-
 markdown: rdiscount
 permalink: pretty

@@ -39,7 +39,7 @@ Now lets go through the absolute basics of programming in Red
 	a: a - 1 ;remember the spaces are important
 	print a  ; printing works for strings too
 
-
+There's a ton more but this is just the basics
 
 ##Get involved
 

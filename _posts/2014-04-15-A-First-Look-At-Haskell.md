@@ -1,6 +1,7 @@
 ---
 title: "A First look at Haskell"
 layout: post
+categories: [tutorial, haskell]
 ---
 
 
@@ -24,11 +25,13 @@ Go to the console (command prompt) and type `ghci`
 
 If you see that you have successfully installed Haskell. 
 Now lets type some commands and see what we get
-	
+
 	Prelude> 6+3
 	9
 	Prelude>  9/3
 	3
+
+
 
 
 ##First functions
@@ -36,7 +39,8 @@ Now lets type some commands and see what we get
 Okay now lets move on from writing command line codes to our first function.
 Create a file named `abc.hs` and save it in any folder. Enter this in the file. It is basically a function called double me that takes x and returns (x+x)
 
-	doubleMe x = x + x  
+ 	doubleMe x = x + x  
+
 
 Now `cd` to the folder where you saved it using the Command Prompt. Run `ghci`. Once inside the GHCI, run `:l abc` 
 
@@ -58,4 +62,4 @@ The if else condition can be written simply in Haskell. First specify the condit
                         else x*2   
 
 ##Conclusion
-We learned how to install haskell and write our first Haskell functions. More to be done in [part 2]()
+We learned how to install haskell and write our first Haskell functions. More to be done in [part 2]({% post_url 2014-04-19-Haskell-Part-Two %})

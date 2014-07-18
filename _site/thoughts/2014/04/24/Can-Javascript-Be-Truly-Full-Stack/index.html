@@ -1,0 +1,284 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>Can Javascript Be A Truly Full Stack Language</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+/*
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 30px;
+ 	margin-bottom: 1px;
+
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<h1>Can Javascript Be A Truly Full Stack Language</h1>
+
+<hr>
+<p>Javascript is the ubiquitous new language of the web. Used both for frontend and backend MVC, javascript is quickly gaining popularity as the language to learn.</p>
+
+<h2>What is A Full Stack Language</h2>
+
+<p>In 2011 a group of programmers started a project called Red. They were attempting to crete a so called full stack language. One language for web development, coding, applications right down to microprocessors.</p>
+
+<p>They so wanted their language to be homioiconic, weakly typed and friendly to beginners. 3 years and a lot of work gave produced a language that's insightful and in depth, redefining the way we may program. They are still far from done though.</p>
+
+<p>So, a full stack language is akin to the One Ring in Lord Of The Rings.</p>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/The_one_ring.jpg' /></p></div>
+
+<p>Looking at the current abilities of Javascript however, I think it coulld make a case for being an a ready to use full stack language.</p>
+
+<h2>The benefits of using Javascript as Full Stack</h2>
+
+<p>JavaScript is</p>
+
+<ol>
+<li>Well known. So no problem about being familiar</li>
+<li>Already full stack because of concepts like Node.js which allow you to create applications.</li>
+<li>Already has a good stricture and programming logic. It is functional and kind of homionic</li>
+</ol>
+
+
+<h2>Did I Say Already Full Stack</h2>
+
+<p>NodeJS was developed to allow programmers to write Javascript Applications for the server. With the proliferation of scripts that do a ton of things NodeJS can officially be used across the entire Stack.</p>
+
+<p>MongoDB takes this a step further. This is a NoSQL database that allows you to program and query in Javascript.</p>
+
+<p>There are a ton of development tools like Yeoman and Mean to help you take care of stuff.</p>
+
+<p>So now we have a large part of the stack running with JS but its not yet Full Stack as per Red's definition</p>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/yeoman.png' /></p></div>
+
+<h2>Lets Go To The Metal</h2>
+
+<p>The reason its not yet full stack boils down to the hardware. We don't yet program our microprocessors in Javascript. But that too is changing in a big way.</p>
+
+<p>These projects bring Javascript right down to the metal and allow you to program microcontrollers using it:</p>
+
+<p><a href="http://pijs.io/">piJS</a> is a project that allows you to program your Raspberry Pi in Javascript</p>
+
+<p><a href="https://tessel.io/">Tessel</a> and <a href="https://www.kickstarter.com/projects/gfw/espruino-javascript-for-%0Athings">Espurino</a> are custom microcontroller boards that are created specifically for the purpose of programming in Javascript</p>
+
+<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/tessel.png' /></p></div>
+
+<h2>Conclusion</h2>
+
+<p>Though Javascript has a lot of detractors that haters repeat oft and loudly there are some serious benefits. Perhaps the most apparent benefit is that a ton ofn developers already know the language well. Javascript is quickly becoming the full stack language and that will probably benefit a lot of people.</p>
+
+<hr>
+<i>24 Apr 2014 </i>
+</div>
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>

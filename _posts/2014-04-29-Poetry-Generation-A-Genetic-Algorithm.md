@@ -1,6 +1,7 @@
 ---
 title: "Poetry Generation: A Genetic Approach"
 layout: post
+categories: [thoughts]
 ---
 ##Why make a Computer write poetry?
 
@@ -14,9 +15,9 @@ Poetry generation has been attempted several times by computer scientists. When 
 
 <div class='row'>
 <div class='medium-6 columns'>
-<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/rabindranath_tagore.jpg' />
+<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/rabindranath_tagore.jpg' style="margin-top:50px"/>
 </div>
-<blockquote class='medium-6 columns' style="margin-top:50px">
+<blockquote class='medium-6 columns' >
 <i>Where the mind is without fear<br />
 And the head is held high,<br />
 Where knowledge is free.<br />
@@ -74,7 +75,7 @@ In this respect our solution seems to follow the paradigm of a genetic algorithm
 The rating increasing will cause the most fit lines to occur more frequently in the poem. Thus we consider this a genetic approach to poetry generation.
 
 <div class='row'>
-<blockquote class='medium-6 columns' style="margin-top:50px">
+<blockquote class='medium-6 columns' >
 <i>If you can make one heap of all your winnings<br />
 And risk it on one turn of pitch-and-toss,<br />
 And lose, and start again at your beginnings<br />
@@ -86,7 +87,7 @@ Except the Will which says to them: "Hold on!"<br /></i>
 - If, Rudyard Kipling
 </blockquote>
 <div class='medium-6 columns'>
-<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/kipling.jpg' />
+<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/kipling.jpg' style="margin-top:30px"/>
 </div>
 </div>
 <br />

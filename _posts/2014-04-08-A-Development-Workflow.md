@@ -1,6 +1,7 @@
 ---
 title: "My Blog Development Workflow"
 layout: post
+categories : [blog]
 ---
 
 <style>
@@ -103,7 +104,7 @@ gem install compass
 
 <div class='row'  style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/compasslogo.png'>
+<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/bower.jpg'>
 </div>
 <div class="medium-8 columns">
 <h4>Bower</h4>

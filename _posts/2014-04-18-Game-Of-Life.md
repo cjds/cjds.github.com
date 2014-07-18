@@ -35,3 +35,5 @@ Considering this is a simulation of basic life forms (super basic). Maybe Turing
 Here are some resources about it
 
 [Wikipedia](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+[Simulation](http://www.bitstorm.org/gameoflife)
+[Video](https://www.youtube.com/watch?v=R9Plq-D1gEk&feature=kp) 

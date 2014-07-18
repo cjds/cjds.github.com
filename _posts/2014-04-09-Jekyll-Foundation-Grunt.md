@@ -3,6 +3,10 @@ title: "Jekyll, Foundation and Grunt"
 layout: post
 ---
 
+> %image%
+> ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/grunt-logo.png)
+
+
 ##What is Grunt
 Grunt is a Javascript library that runs via Node.js. It allows you to automate all your production tasks into one command.
 (for example minifying the JS and CSS, compiling the CSS from SASS, running the server etc.)

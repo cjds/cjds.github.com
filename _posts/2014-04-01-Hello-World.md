@@ -1,6 +1,7 @@
 ---
 title: Hello World
 layout: post
+categories : [me]
 tags: hello 
 ---
 

@@ -3,7 +3,7 @@ title: "Creating a Simple Android Game"
 layout: post
 ---
 
-Recently, I have started programming in Android again after nearly a 3 year break. I thought I would start by creating a simple game and making it into a tutorial.
+Recently, I have started programming in Android again after nearly a 3 year break. I thought I would start by creating a simple game and making it into a tutorial. Instead of delving into the logic of any particular game I'm just giving the outline code of what it takes to make a game.
 
 
 ##1. The basics behind making a game
@@ -31,7 +31,9 @@ Assuming you have android up and running create a new Android project in Eclipse
 
 Click File > New Android Application Project
 
-<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/new project.png' />
+> %image%
+> ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/new project.png)
+
 
 Click Next and then Finish.
 You should have a basic android project up and running.
@@ -61,10 +63,31 @@ We'll start by creating a class called GameBoard which extends the view class. T
         public GameBoard(Context context, AttributeSet aSet) {
             super(context, aSet);
         }
+
+
+        @Override
+        public void onDraw(Canvas canvas){
+
+        }
     }
 
+The `onDraw` method will be the key to drawing here. We will draw on the canvas passed to the method and that will be seen on the screen. 
 
+    boolean init=false;
+    int time =0;
+    @Override
+    public void onDraw(Canvas canvas){
+            if(!init){
+                init=true;
+            }
+            else{
+                drawBackground(canvas);
+                boolean bringForward=false;
+                time++;
+                addTextAnimation(canvas);
+            }
 
+    }
 ###2.2Building the XML for the Activity
 
 Well for the game activity we'll create our own `activity.xml`
@@ -86,3 +109,81 @@ This basically will contain any layout (I've used a LinearLayout but it doesn't 
 
 
 ###2.3 Building the Activity Itself
+
+To build the Activity we make a use of a `Handler`. `Handler` is basically an extension of the `Thread` class which can call a bit of code after some milliseconds (in the `postDelayed` method). We use this class to call the views `onDraw` method repeatedly.
+
+To handle clicks we use an `onTouchListener` that we create using an anonymous class. You can override any `MotionEvent` and pass it to the appropriate method in the view. We built the `handleClick` method for that very purpose.
+
+    public class Dactyl extends Activity{
+
+        public Handler frame = new Handler();
+        private static final int FRAME_RATE = 40; //25 frames per second
+        private GameBoard canvas;
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_dactyl);
+            
+            sharedPref = this.getSharedPreferences("settings",Context.MODE_PRIVATE);
+            Handler h = new Handler();
+            canvas=(GameBoard)findViewById(R.id.the_canvas);
+
+                    canvas.setOnTouchListener(new OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent me) {
+                if(running){
+                    switch(me.getActionMasked()){
+                        case MotionEvent.ACTION_DOWN:
+                        case MotionEvent.ACTION_POINTER_DOWN: 
+                            ((GameBoard)v).handleClick(me.getX(),me.getY());
+                            return true;
+                    }
+                }       
+                return false;
+            }
+            
+        });
+
+            
+            h.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                        initGfx();
+                }
+            }, 1000);
+        }
+
+        synchronized public void initGfx() {
+                frame.removeCallbacks(frameUpdate);
+                frame.postDelayed(frameUpdate, FRAME_RATE);
+        }
+            
+            
+            
+        public Runnable frameUpdate = new Runnable() {
+            @Override
+            synchronized public void run() {
+                running=true;
+                frame.removeCallbacks(frameUpdate);
+                //make Updates here
+                //then invoke the onDraw by invalidating the canvas
+                canvas.invalidate();
+                frame.postDelayed(frameUpdate, FRAME_RATE);
+            }
+        };
+            
+            
+        public void end(){
+            Intent i= new Intent(context,EndGame.class);
+            i.putExtra("score", score);
+            startActivity(i);  
+        }
+            
+            
+        @Override
+        public void finish(){
+            frame.removeCallbacks(frameUpdate);
+            super.finish();
+        }       
+    }

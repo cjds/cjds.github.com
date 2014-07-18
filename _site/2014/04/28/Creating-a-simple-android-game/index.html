@@ -1,12 +1,94 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
 	<title>Creating a Simple Android Game</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
 <style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
  h1,h2,h3,h4,h5,h6{
  	font-weight: 900;
+ }
+
+ h1{
+ 	margin-top: 1rem;
  }
 
 h2{
@@ -25,16 +107,23 @@ h3{
 
 .top-bar{
 	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
 }
  .top-bar >ul >li >h1 > a{
  	font-weight: 900 !important;
  	color:#000 !important;
- }
 
+ }
+/*
  code{
  	overflow: auto;
 
- 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
  	color:#555;
 	background-color: #eee;
 	padding:0px 4px 3px 4px;
@@ -62,6 +151,15 @@ pre{
 	overflow-x:auto;
 	overflow-y: hidden;
  }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
 
  .big img{
  border-top: solid 1px #ccc;
@@ -71,7 +169,7 @@ pre{
  }
 
  .image img{
- 	margin: 0px auto;
+ 	margin: 10px auto 30px;
  	display: block;
  }
 
@@ -86,15 +184,18 @@ pre{
  	text-align: center;
  	margin-bottom: 25px;
  }
- p{
- 	font-family: "Helvetica Neue","Helvetica",Arial,sans-serif;
- 	line-height:120%;
- }
+
 
  .post-div{
  	padding: 25px;
  	border-top: solid 1px #ccc;
  box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 30px;
+ 	margin-bottom: 1px;
+
  }
 </style>
 <body>
@@ -105,11 +206,11 @@ pre{
     </li>
   </ul>
 </nav>
-<div class='large-8 large-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
 <h1>Creating a Simple Android Game</h1>
 
 <hr>
-<p>Recently, I have started programming in Android again after nearly a 3 year break. I thought I would start by creating a simple game and making it into a tutorial.</p>
+<p>Recently, I have started programming in Android again after nearly a 3 year break. I thought I would start by creating a simple game and making it into a tutorial. Instead of delving into the logic of any particular game I'm just giving the outline code of what it takes to make a game.</p>
 
 <h2>1. The basics behind making a game</h2>
 
@@ -139,7 +240,7 @@ This custom view will act like a blank Canvas. We keep drawing the entire game l
 
 <p>Click File > New Android Application Project</p>
 
-<p><img src='http://localhost:4000/assets/2014-04-28/new project.png' /></p>
+<div class="image"><p><img src="http://localhost:4000/assets/2014-04-28/new%20project.png" alt="" /></p></div>
 
 <p>Click Next and then Finish.
 You should have a basic android project up and running.</p>
@@ -161,7 +262,41 @@ You should have a basic android project up and running.</p>
 
 <p>(this code will however be done in the activity. I specified the theory here.)</p>
 
-<p>So now lets go about building our View</p>
+<p>So now lets go about building our View.</p>
+
+<p>We'll start by creating a class called GameBoard which extends the view class. Then create a constructor and override the views <code>onDraw</code> method.</p>
+
+<pre><code>class GameBoard extends View{
+    public GameBoard(Context context, AttributeSet aSet) {
+        super(context, aSet);
+    }
+
+
+    @Override
+    public void onDraw(Canvas canvas){
+
+    }
+}
+</code></pre>
+
+<p>The <code>onDraw</code> method will be the key to drawing here. We will draw on the canvas passed to the method and that will be seen on the screen.</p>
+
+<pre><code>boolean init=false;
+int time =0;
+@Override
+public void onDraw(Canvas canvas){
+        if(!init){
+            init=true;
+        }
+        else{
+            drawBackground(canvas);
+            boolean bringForward=false;
+            time++;
+            addTextAnimation(canvas);
+        }
+
+}
+</code></pre>
 
 <h3>2.2Building the XML for the Activity</h3>
 
@@ -174,7 +309,7 @@ You should have a basic android project up and running.</p>
     android:layout_height="fill_parent"
     android:orientation="vertical" &gt;
 
-&lt;com.cjds.dactyl.GameBoard
+&lt;com.cjds.GameBoard
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/back"
@@ -184,7 +319,101 @@ You should have a basic android project up and running.</p>
 
 <h3>2.3 Building the Activity Itself</h3>
 
+<p>To build the Activity we make a use of a <code>Handler</code>. <code>Handler</code> is basically an extension of the <code>Thread</code> class which can call a bit of code after some milliseconds (in the <code>postDelayed</code> method). We use this class to call the views <code>onDraw</code> method repeatedly.</p>
+
+<p>To handle clicks we use an <code>onTouchListener</code> that we create using an anonymous class. You can override any <code>MotionEvent</code> and pass it to the appropriate method in the view. We built the <code>handleClick</code> method for that very purpose.</p>
+
+<pre><code>public class Dactyl extends Activity{
+
+    public Handler frame = new Handler();
+    private static final int FRAME_RATE = 40; //25 frames per second
+    private GameBoard canvas;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dactyl);
+
+        sharedPref = this.getSharedPreferences("settings",Context.MODE_PRIVATE);
+        Handler h = new Handler();
+        canvas=(GameBoard)findViewById(R.id.the_canvas);
+
+                canvas.setOnTouchListener(new OnTouchListener(){
+        @Override
+        public boolean onTouch(View v, MotionEvent me) {
+            if(running){
+                switch(me.getActionMasked()){
+                    case MotionEvent.ACTION_DOWN:
+                    case MotionEvent.ACTION_POINTER_DOWN: 
+                        ((GameBoard)v).handleClick(me.getX(),me.getY());
+                        return true;
+                }
+            }       
+            return false;
+        }
+
+    });
+
+
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                    initGfx();
+            }
+        }, 1000);
+    }
+
+    synchronized public void initGfx() {
+            frame.removeCallbacks(frameUpdate);
+            frame.postDelayed(frameUpdate, FRAME_RATE);
+    }
+
+
+
+    public Runnable frameUpdate = new Runnable() {
+        @Override
+        synchronized public void run() {
+            running=true;
+            frame.removeCallbacks(frameUpdate);
+            //make Updates here
+            //then invoke the onDraw by invalidating the canvas
+            canvas.invalidate();
+            frame.postDelayed(frameUpdate, FRAME_RATE);
+        }
+    };
+
+
+    public void end(){
+        Intent i= new Intent(context,EndGame.class);
+        i.putExtra("score", score);
+        startActivity(i);  
+    }
+
+
+    @Override
+    public void finish(){
+        frame.removeCallbacks(frameUpdate);
+        super.finish();
+    }       
+}
+</code></pre>
+
+<hr>
 <i>28 Apr 2014 </i>
 </div>
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
 </body>
 </html>

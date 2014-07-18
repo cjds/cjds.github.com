@@ -1,0 +1,258 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>What is HCI and Why I'm doing a Masters in it.</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#222;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	font-weight: 900;
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	font-size: 1.6em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+/*
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 30px;
+ 	margin-bottom: 1px;
+
+ }
+</style>
+<body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+    </li>
+  </ul>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<h1>What is HCI and Why I'm doing a Masters in it.</h1>
+
+<hr>
+<h2>What Is HCI</h2>
+
+<p>Human Computer Interaction is the study of how humans and computers interact so that humans can use computers more effectively. HCI is a field that's been developing for a few years. Instead of focusing on how to engineer new technologies it focuses on how to use the current technology to produce more useful stuff instead.</p>
+
+<h2>Why I'm interested in HCI</h2>
+
+<p>HCI is not about developing a cool new solution. Its about making solutions that currently exist more feasible. The reason I'm doing it is because frankly 80% of cool stuff today was reseached about 10 years ago. It takes so long to come to the consumer shelf that we are bored by the time we get it.</p>
+
+<p>Look at Facebook. We had the technology to build that 20 years ago. People were already doing it in colleges or locally 15 years ago. MySpace and Friendster even came out before it. But, one great implementation and it defeated all its other rivals. Same goes for Google. Yahoo! and other competitors were the king of search in their day. Google's PageRank algorithm took them on providing better results and the rest is history.</p>
+
+<h2>HCI in Georgia Tech</h2>
+
+<p>I'm doing a masters from Georgia Institute of Technology. A link to the course can be found <a href="http://mshci.gatech.edu/">here</a>
+In Georgia Tech, the course headed up by 4 schools:</p>
+
+<ul>
+<li>Industrial Design</li>
+<li>Interactive Computing</li>
+<li>Literature, Media and Communication (LMC)</li>
+<li>Psychology</li>
+</ul>
+
+
+<p>The reason for this is the interdisciplanary nature of the subject. Georgia Tech seems to have an inclusive environment and only around 30 or so kids in one track per year.</p>
+
+<p>HCI in its clearest form is about helping people. Its about thinking about the products of the future. And that's why I'm doing a Masters in the subject.</p>
+
+<hr>
+<i>26 Apr 2014 </i>
+</div>
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>
