@@ -3,16 +3,9 @@ title: "5 Lyrics I Like"
 layout: post
 categories: [about]
 ---
-<style>
-p{
-	font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
-}
-</style>
 _"One good thing about music, when it hits you, you feel no pain. ~ Bob Marley"_
 
-Randomly today I thought I'd write about lyrics. Music is a really subjective subject so if you disagree with me write your own list in the comments. Every one of these lyrics had stories attached. Or at least reasons why they were written. I believe that makes each song worth listening to.
-
-I'm not contending these are the best lyrics ever written or even close to them I'm just saying the lyrics of these songs are pretty cool.
+Randomly today I thought I'd write about lyrics. Music is a really subjective subject so if you disagree with me write your own list in the comments. Every one of these lyrics had stories attached. Or at least reasons why they were written. 
 
 
 ###April Come She Will - Simon & Garfunkel 

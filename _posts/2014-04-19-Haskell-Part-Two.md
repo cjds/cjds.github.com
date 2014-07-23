@@ -95,4 +95,4 @@ The `let` command lets us set the area and proceed to use that in the rest of th
 	"Area is 16.324559999999998"
 	
 
-More higher order stuff to come in Part 3
+More higher order stuff to come in Part 3 (if I ever get around to writing it)

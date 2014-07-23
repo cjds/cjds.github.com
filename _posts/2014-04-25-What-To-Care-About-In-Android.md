@@ -13,21 +13,21 @@ I just thought I'd write a few things that occurred to me in the process of maki
 
 1. The Pause States
 Handle all the pause states.
-onPause onResume onDestroy everuthimg. Its annoying when you use the phone proplerlu and the app.doesn't seem to respond
+onPause onResume onDestroy everything. Its annoying when you use the phone in a normal manner and the app doesn't respond accordingly. You should probably also consider that before Android 4.0 there was no multiple apps button but a menu button instead
 
 2. Font And Colour
-Too many apps stick to the default font. That font could is different for different phones. Its best if.you have a uniform font that everyone likes
+Too many apps stick to the default font. That font is different for different phones and is sometimes horrendous. Take Samsung for example which insists that their default font should be a handwritten one which looks ridiculous for the Settings menu (that's just one example). Its best if you have a unique font that everyone likes. (For example QuizUp uses Gotham to beautiful effect)
 
 
 3. Uniformity is a Beautiful Thing
-Most apps have uniformity just like most.websites. but sometimes you run across an app.thats so incongruously connected that it makes you wonder why the designer did so many random things
+Most apps have uniformity, just like most websites do. But sometimes you run across an app thats so incongruously connected that it makes you wonder. The bells and whistles might be present but there's no reason to use each and every one.
 
 
-4. Sound, Animation: Only include it if its worth it
-Sounds, animation etc. Frankly though animation can feel good if used well I've never.understood.sound
-Tons of websites run fine without it.
-Its believe sound should be used for.getting the users attention. Not just for everything in the app
+4. Sound and Animation
+The Gist: Only include it if its worth it
+Sounds, animation etc. Frankly though animation can make an app feel good (if used well), I've never understood how useful sound is at conveying information. 
+Tons of websites run fine without it. Sound is useful at calling the users attention to something, the same way animation is. However this should be used warily and sparingly in my opinion.
 
 
 5. Design Everything
-I hope someday everyone will see, it takes a minute to everything on the page and a year to undo whatever crap design you came up with in the minute.
+I hope someday everyone will see, it takes a minute to place everything on the page and a year to undo whatever crap design you came up with in the minute.
