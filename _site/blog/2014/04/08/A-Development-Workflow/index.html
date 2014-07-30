@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,14 +241,26 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>My Blog Development Workflow</h1>
 
 <hr>
@@ -230,7 +284,7 @@ pre{
 
 <div class='medium-4 columns' >
 
-<img src='http://localhost:4000/assets/2014-04-08/jekyll-logo.png' >
+<img src='http://cjds.github.io//assets/2014-04-08/jekyll-logo.png' >
 </div>
 <div class='medium-8 columns' markdown='1'>
 <h4>Jekyll </h4>
@@ -248,7 +302,7 @@ Jekyll is a static blog manager. It takes blog posts written in HTML or Markdown
 
 <div class='row' style='margin-bottom:20px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/foundation5.jpg'>
+<img src='http://cjds.github.io//assets/2014-04-08/foundation5.jpg'>
 </div>
 <div class="medium-8 columns">
 <h4>Foundation 5 (Using SCSS so I can customize)</h4>
@@ -263,7 +317,7 @@ Manages the CSS for my blog. Its mobile-first so it takes care that the blog loo
 
 <div class='row'  style='margin-bottom:20px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/pygments.png' >
+<img src='http://cjds.github.io//assets/2014-04-08/pygments.png' >
 </div>
 <div class="medium-8 columns">
 <h4>Pygments</h4>
@@ -281,7 +335,7 @@ pip install pygments
 
 <div class='row'  style='margin-bottom:20px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/grunt-logo.png'>
+<img src='http://cjds.github.io//assets/2014-04-08/grunt-logo.png'>
 </div>
 <div class="medium-8 columns">
 <h4>Grunt</h4>
@@ -299,7 +353,7 @@ npm install grunt -g
 
 <div class='row'  style='margin-bottom:20px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/compasslogo.png'>
+<img src='http://cjds.github.io//assets/2014-04-08/compasslogo.png'>
 </div>
 <div class="medium-8 columns">
 <h4>Compass</h4>
@@ -318,7 +372,7 @@ gem install compass
 
 <div class='row'  style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/bower.jpg'>
+<img src='http://cjds.github.io//assets/2014-04-08/bower.jpg'>
 </div>
 <div class="medium-8 columns">
 <h4>Bower</h4>
@@ -340,7 +394,7 @@ npm install bower
 
 <div class='row'   style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/sass.gif' >
+<img src='http://cjds.github.io//assets/2014-04-08/sass.gif' >
 </div>
 <div class="medium-8 columns">
 <h4>Sass</h4>
@@ -355,7 +409,7 @@ This allows you to extend the functionalities of CSS by adding features like loo
 
 <div class='row'   style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/rubylang.png' >
+<img src='http://cjds.github.io//assets/2014-04-08/rubylang.png' >
 </div>
 <div class="medium-8 columns">
 <h4>Ruby</h4>
@@ -370,7 +424,7 @@ This allows you to extend the functionalities of CSS by adding features like loo
 
 <div class='row'  style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/python.png' >
+<img src='http://cjds.github.io//assets/2014-04-08/python.png' >
 </div>
 <div class="medium-8 columns">
 <h4>Python</h4>
@@ -385,7 +439,7 @@ Another Programming language like Ruby. I won't go into the differences here but
 
 <div class='row'   style='margin-bottom:30px'>
 <div class='medium-4 columns'>
-<img src='http://localhost:4000/assets/2014-04-08/nodejs.png' >
+<img src='http://cjds.github.io//assets/2014-04-08/nodejs.png' >
 </div>
 <div class="medium-8 columns">
 <h4>Node.js (which runs on Javascript)</h4>

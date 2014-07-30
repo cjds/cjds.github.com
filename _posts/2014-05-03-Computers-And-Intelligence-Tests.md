@@ -1,6 +1,8 @@
 ---
 title: "Computers And The Ravens Intelligence Test"
 layout: post
+draft: true
+
 ---
 
 ##What is the Ravens Intelligence Test

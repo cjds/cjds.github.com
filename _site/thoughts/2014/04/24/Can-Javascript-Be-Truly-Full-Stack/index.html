@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,14 +241,26 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>Can Javascript Be A Truly Full Stack Language</h1>
 
 <hr>
@@ -220,7 +274,7 @@ pre{
 
 <p>So, a full stack language is akin to the One Ring in Lord Of The Rings.</p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/The_one_ring.jpg' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-24/The_one_ring.jpg' /></p></div>
 
 <p>Looking at the current abilities of Javascript however, I think it coulld make a case for being an a ready to use full stack language.</p>
 
@@ -245,7 +299,7 @@ pre{
 
 <p>So now we have a large part of the stack running with JS but its not yet Full Stack as per Red's definition</p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/yeoman.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-24/yeoman.png' /></p></div>
 
 <h2>Lets Go To The Metal</h2>
 
@@ -257,7 +311,7 @@ pre{
 
 <p><a href="https://tessel.io/">Tessel</a> and <a href="https://www.kickstarter.com/projects/gfw/espruino-javascript-for-%0Athings">Espurino</a> are custom microcontroller boards that are created specifically for the purpose of programming in Javascript</p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-24/tessel.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-24/tessel.png' /></p></div>
 
 <h2>Conclusion</h2>
 

@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,14 +241,26 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>5 things every designer should bother about in Android</h1>
 
 <hr>
@@ -219,17 +273,17 @@ I've spent the next 3 weeks changing and improving the design.</p>
 <ol>
 <li><p>The Pause States
 Handle all the pause states.
-onPause onResume onDestroy everuthimg. Its annoying when you use the phone proplerlu and the app.doesn't seem to respond</p></li>
+onPause onResume onDestroy everything. Its annoying when you use the phone in a normal manner and the app doesn't respond accordingly. You should probably also consider that before Android 4.0 there was no multiple apps button but a menu button instead</p></li>
 <li><p>Font And Colour
-Too many apps stick to the default font. That font could is different for different phones. Its best if.you have a uniform font that everyone likes</p></li>
+Too many apps stick to the default font. That font is different for different phones and is sometimes horrendous. Take Samsung for example which insists that their default font should be a handwritten one which looks ridiculous for the Settings menu (that's just one example). Its best if you have a unique font that everyone likes. (For example QuizUp uses Gotham to beautiful effect)</p></li>
 <li><p>Uniformity is a Beautiful Thing
-Most apps have uniformity just like most.websites. but sometimes you run across an app.thats so incongruously connected that it makes you wonder why the designer did so many random things</p></li>
-<li><p>Sound, Animation: Only include it if its worth it
-Sounds, animation etc. Frankly though animation can feel good if used well I've never.understood.sound
-Tons of websites run fine without it.
-Its believe sound should be used for.getting the users attention. Not just for everything in the app</p></li>
+Most apps have uniformity, just like most websites do. But sometimes you run across an app thats so incongruously connected that it makes you wonder. The bells and whistles might be present but there's no reason to use each and every one.</p></li>
+<li><p>Sound and Animation
+The Gist: Only include it if its worth it
+Sounds, animation etc. Frankly though animation can make an app feel good (if used well), I've never understood how useful sound is at conveying information.
+Tons of websites run fine without it. Sound is useful at calling the users attention to something, the same way animation is. However this should be used warily and sparingly in my opinion.</p></li>
 <li><p>Design Everything
-I hope someday everyone will see, it takes a minute to everything on the page and a year to undo whatever crap design you came up with in the minute.</p></li>
+I hope someday everyone will see, it takes a minute to place everything on the page and a year to undo whatever crap design you came up with in the minute.</p></li>
 </ol>
 
 

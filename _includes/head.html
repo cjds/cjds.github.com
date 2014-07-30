@@ -12,8 +12,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -104,6 +108,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -118,7 +160,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 

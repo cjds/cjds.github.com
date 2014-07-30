@@ -8,7 +8,7 @@
 
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
 <link href='/css/prettify.css' rel='stylesheet' type='text/css'>
-	<title>5 Lyrics I Like</title>
+	<title>D3 For People who know Javascript</title>
 	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
 <style>
@@ -261,65 +261,82 @@ pre{
   </section>
 </nav>
 <div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
-<h1>5 Lyrics I Like</h1>
+<h1>D3 For People who know Javascript</h1>
 
 <hr>
-<p><em>"One good thing about music, when it hits you, you feel no pain. ~ Bob Marley"</em></p>
+<p>D3.js is used for displaying all kinds of data visually. Basically its a tool for information visualization with a huge number of methods to help you "see" the information.</p>
 
-<p>Randomly today I thought I'd write about lyrics. Music is a really subjective subject so if you disagree with me write your own list in the comments. Every one of these lyrics had stories attached. Or at least reasons why they were written.</p>
+<p>D3 is based in Javascript so if you know your javascript you already have a headstart.</p>
 
-<h3>April Come She Will - Simon &amp; Garfunkel</h3>
+<p>Apart from this really quick tutorial I would recommend:</p>
 
-<p>The contender for this spot was Time by Pink Floyd. Both these songs have immensely similar themes though Time is far more well known. But I love the mellow guitar that plays in April Come She Will. For some reason it reminds me of passing time far more than ticking clocks</p>
-
-<iframe width="480" height="360" src="//www.youtube.com/embed/PYD-DIggB2k" frameborder="0" allowfullscreen></iframe>
-
-
-<p><br><br></p>
-
-<h3>Imagine - John Lennon</h3>
-
-<p><em>You may say I'm a dreamer</em> lets hope I'm not the only one</p>
-
-<iframe width="480" height="360" src="//www.youtube.com/embed/XLgYAHHkPFs" frameborder="0" allowfullscreen></iframe>
+<ol>
+<li><a href="http://www.youtube.com/playlist?list=UUNYL0ZF2j8-OSGZ4iHBLNPA">This</a> YouTube series is really worth it.</li>
+<li>The <a href="https://github.com/mbostock/d3/wiki/API-ReferenceReading">API</a> is quite legible.</li>
+</ol>
 
 
-<p><br><br></p>
+<h3>Basics of D3.</h3>
 
-<h3>In My Life - The Beatles (so John Lennon)</h3>
+<p>The super basic idea is to manipulate DOM elements based on data. Though since this is possible in jQuery really easily why should we bother with D3.</p>
 
-<p>In My Life was always about reminiscing. Whenever I think of the way things were or how things seemed in the past I think of it. Always reminds me that <em>I know I'll never lose affection, For people and things that went before, I know I'll often stop and think about them, In my life I love you more.</em></p>
+<p>Simply because D3 was built for the manipulation. D3 contains a whole bunch of methods to produce scales (log and linear scales for example), create polygons (for cool artsy representations), for converting a JSON stream into geo-coordinates etc.</p>
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/Zicw_dVwhfM" frameborder="0" allowfullscreen></iframe>
+<p>Now though you can manipulate any element one of the simplest and most obvious choices for any manipulation would be the SVG or Canvas element</p>
+
+<h3>SVG for manipulation in D3</h3>
+
+<p>To add an SVG to the DOM is quite simple</p>
+
+<pre><code> var canvas = d3.select("body")
+                .append("svg")
+                .attr("width",300)
+                .attr("height",300);
+</code></pre>
+
+<p>This code is quite similar to the jQuery code to add the same.</p>
+
+<h3>First bar graph</h3>
+
+<p>Now lets try some basic D3 code to create a bar graph.
+A bar graph is a series of rectangles based on the values provided.
+So, first lets assume our data is stored in a JSON file  <code>data.json</code> like so</p>
+
+<pre><code>[
+{ name: 'x' size :10},
+{ name: 'z' size :12},
+{ name: 'y' size :4}
+]
+</code></pre>
+
+<p>Now to make the graph</p>
+
+<pre><code>d3.json("data.json", function (data){
+    canvas.selectAll('rect')
+          .data(data)
+          .enter().
+          .append("rect")
+          .attr(height,50)
+          .attr(width,function(d){ d.size *10})
+          .attr(y,function(d,i){ i*55})
+
+});
+</code></pre>
+
+<p>What the above code does is:</p>
+
+<ol>
+<li>selects all the DOM elements that are rects (none)</li>
+<li>enters a number of rectangles (i.e. the # of data elements - the # of rectangles present)</li>
+<li>The width of the rectangle is given by a function of size.</li>
+<li>The y position is given by the number (hence a function with 2 parameters)</li>
+</ol>
 
 
-<p><br><br></p>
-
-<h3>Roll The Dice - Koufax</h3>
-
-<p>This is the least famous song on the list but with some absolutely astounding lyrics. The lyrics though speak for themselves.
-From they're opening reference to George Orwell's 1985 ( <em>Eric Blair was right ..</em> ) to the last verse discussing Jean Paul Sartre ( <em>a thinking man chose to pass up a Nobel Prize</em>) this song is a masterpiece in poetry.</p>
-
-<p>If you listen carefully this song will cause you to question institutionalism in a fundamental way.</p>
-
-<iframe width="480" height="360" src="//www.youtube.com/embed/Qb7MRSLThYc" frameborder="0" allowfullscreen></iframe>
-
-
-<p><br><br></p>
-
-<h3>Blowin' In The Wind - Bob Dylan</h3>
-
-<p>I won't bother talking about this one. I'll let Bob Dylan do it</p>
-
-<blockquote><p>There ain't too much I can say about this song except that the answer is blowing in the wind. It ain't in no book or movie or TV show or discussion group. Man, it's in the wind ...just like a restless piece of paper it's got to come down some  ...But the only trouble is that no one picks up the answer when it comes down so not too many people get to see and know</p></blockquote>
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/3l4nVByCL44" frameborder="0" allowfullscreen></iframe>
-
-
-<p><br><br></p>
+<p>These are the real basics of D3. Second tutorial on their Time and Geometry Libraries will come after a while</p>
 
 <hr>
-<i>21 Apr 2014 </i>
+<i>20 Apr 2014 </i>
 </div>
 <script type='text/javascript'>
 $( document ).ready(function(){

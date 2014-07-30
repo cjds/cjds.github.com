@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,14 +241,26 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>Maven in 15 minutes</h1>
 
 <hr>
@@ -229,7 +283,7 @@ Now, Suppose B requires Project C. We don't have to do anything. When compiling 
 
 <p>Computer > Properties > Advanced System Settings > Environment Variables</p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/environment%20variables.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-05/environment%20variables.png' /></p></div>
 
 <ol>
 <li>Add a new Variable name : <code>JAVA_HOME</code> value: <code>{JAVA_PATH}</code>, for example <code>C:\Program Files\Java\jdk1.6</code></li>
@@ -247,7 +301,7 @@ Now, Suppose B requires Project C. We don't have to do anything. When compiling 
 <pre><code>mvn archetype:generate -DgroupId={YOUR_PACKAGE} -DartifactId={YOUR_NAME} -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 </code></pre>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/maven%20new%20project.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-05/maven%20new%20project.png' /></p></div>
 
 <ol>
 <li><code>DarchetypeArtifactId</code> : Defines the basic archetype the project will use. You can read more about it <a href="http://maven.apache.org/guides/introduction/introduction-to-archetypes.html">here</a></li>
@@ -266,7 +320,7 @@ Now, Suppose B requires Project C. We don't have to do anything. When compiling 
 
 <p>Go to the project folder in the command line and run this command : <code>mvn eclipse:eclipse</code></p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/maven%20eclipsify.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-05/maven%20eclipsify.png' /></p></div>
 
 <ul>
 <li>Set the <code>M2_REPO</code> in Eclipse</li>
@@ -278,7 +332,7 @@ Now, Suppose B requires Project C. We don't have to do anything. When compiling 
 <pre><code>mvn -Declipse.workspace="your Eclipse Workspace" eclipse:configure-workspace
 </code></pre>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-05/m2_repo.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-05/m2_repo.png' /></p></div>
 
 <ul>
 <li>Now just import your project into the workspace and your done.</li>

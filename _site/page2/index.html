@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,158 +241,236 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>Carl's Blog</h1>
 
 <hr>
 <ul style='list-style:none'>
   
-  <li style='text-align:center'>
-    <a href="/2014/05/15/Its-Been-A-Month/">Its Been A Month</a>
-  </li>
+    
   
+    
+  
+    
   <li style='text-align:center'>
     <a href="/2014/05/08/Facebook-Score-API-and-Android-Basics/">Facebook Score API and Android</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
-    <a href="/2014/05/07/PCA-Analysis/">PCA Analysis</a>
+    <a href="/2014/05/07/RBFN/">Radial Basis Function Networks Java</a>
   </li>
   
-  <li style='text-align:center'>
-    <a href="/2014/05/06/Summarization-Algorithms/">Automatic Summarization</a>
-  </li>
   
+    
+  
+    
   <li style='text-align:center'>
     <a href="/thoughts/2014/05/05/Information-Visualization-And-Tags/">Information Visualization And Tags</a>
   </li>
   
-  <li style='text-align:center'>
-    <a href="/2014/05/03/Computers-And-Intelligence-Tests/">Computers And The Ravens Intelligence Test</a>
-  </li>
   
+    
+  
+    
   <li style='text-align:center'>
     <a href="/2014/05/02/Books/">Some books I read and thought were worth reading</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/05/01/Languages-I-Know/">Languages I know and recommend</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/30/5-Minute-Java-Neural-Network/">Hebbian Learning in Java</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/thoughts/2014/04/29/Poetry-Generation-A-Genetic-Algorithm/">Poetry Generation: A Genetic Approach</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/28/Creating-a-simple-android-game/">Creating a Simple Android Game</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/aboutme/2014/04/26/What-Is-HCI-And-Why-Im-Doing-A-Masters/">What is HCI and Why I'm doing a Masters in it.</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/25/What-To-Care-About-In-Android/">5 things every designer should bother about in Android</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/thoughts/2014/04/24/Can-Javascript-Be-Truly-Full-Stack/">Can Javascript Be A Truly Full Stack Language</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/23/What-I-learned-While-Getting-An-Engineering-Degree/">What I learned while getting my engineering degree</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/thoughts/2014/04/22/Companies-Built-For-The-Money/">Companies are Being Built for the Money</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/about/2014/04/21/Five-Lyrics-I-Like/">5 Lyrics I Like</a>
   </li>
   
+  
+    
+  <li style='text-align:center'>
+    <a href="/2014/04/20/D3/">D3 For People who know Javascript</a>
+  </li>
+  
+  
+    
   <li style='text-align:center'>
     <a href="/tutorial/haskell/2014/04/19/Haskell-Part-Two/">Haskell Part 2</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/18/Game-Of-Life/">Conway's Game Of Life</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/17/Whats-Cool-About-Red/">What's Cool About Red</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/16/Introduction-to-Hadoop/">What is Hadoop</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/tutorial/haskell/2014/04/15/A-First-Look-At-Haskell/">A First look at Haskell</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/thoughts/2014/04/14/Why-Functional-Programming/">Why Functional Programming</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/12/Why-not-to-buy-a-moto-g/">Why Not To Buy A Moto G</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/11/Goscinny/">Ren&eacute; Goscinny : The French Comic Genius</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/10/Google-Single-Sign-On/">Google Single Sign On Makes Me Nervous</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/09/Jekyll-Foundation-Grunt/">Jekyll, Foundation and Grunt</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/blog/2014/04/08/A-Development-Workflow/">My Blog Development Workflow</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/blog/2014/04/07/A-Week-Of-Blogging/">A Week Of Blogging</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/java/tutorial/2014/04/06/Knockin-On-Heavens-Door/">A Song In Pictures: Knockin' On Heavens Door</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/java/tutorial/2014/04/05/Maven-In-15/">Maven in 15 minutes</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/tutorial/nlp/2014/04/04/Knicker-Big-Huge-Thesaurus-tutorial/">Tutorial: Using Wordnik and Big Thesaurus API</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/tutorial/java%208/2014/04/03/Genetic-Algorithm-And-Lambda-Expressions/">Writing a Genetic Algorithm in Java with Lambda Expressions</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/2014/04/02/Installing-Jekyll-on-windows/">Install and Use Jekyll on Windows</a>
   </li>
   
+  
+    
   <li style='text-align:center'>
     <a href="/me/2014/04/01/Hello-World/">Hello World</a>
   </li>
+  
   
 </ul>
 </div>

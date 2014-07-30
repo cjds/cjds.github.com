@@ -29,7 +29,7 @@ Hebbian Learning is the simplest form aof a neural network I can describe. It is
  Now you notice in the training data we always see the first two dimensions firing. So hopefully when we test we will see the same.
  Highest scores for things starting with `[1 1]`
     
- We're looking at a single layer network with no hidden layers, i.e. just input na d.
+ We're looking at a single layer network with no hidden layers, i.e. just input and output.
 
 {% raw  %}
 	public class neuralnet{
@@ -61,7 +61,6 @@ Hebbian Learning is the simplest form aof a neural network I can describe. It is
 			training=trainingdata;
 		}
 		
-		// dw= y*xi
 		public void training(){
 			for(int i=0;i<training.length;i++){
 				int inputs[]= training[i];

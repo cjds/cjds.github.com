@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,18 +241,30 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>Ren&eacute; Goscinny : The French Comic Genius</h1>
 
 <hr>
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/goscinny.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/goscinny.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Goscinny standing with his creations</p></div>
 
@@ -221,42 +275,39 @@ pre{
 <p>He left America in 1946 to join the French Army as their official illustrator. After the war however, he returned to New York. This proved to be one of the hardest phases in young Ren&eacute;'s life.
 He was living alone and broke with no work to be found anywhere. Little did he know that he would soon meet Harvey Kurtzman and Will Elder (who founded MAD Magazine) and work with them in a small art studio. This was supposed to be the start of a friendship that would last a lifetime.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/kurtzman_severin_goscinny.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/kurtzman_severin_goscinny.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Harvey Kurtzman, John Severin and Ren&eacute; Goscinny in 1948</p></div>
 
-<p>/<em>Rossy</em>/
-Around this time the famous Belgian cartoonist, Maurice De Bevere, travelled to the United States. In the course of working for MAD Magazine, he met Goscinny. He later let the French Cartoonist take over the writing for his famous Lucky Luke comic book series. With Goscinny writing (from 1955 to his death in 1977), Lucky Luke reached its zenith and it is still considered by many to be the golden age of the comic.</p>
+<p>Around this time the famous Belgian cartoonist, Maurice De Bevere, travelled to the United States. In the course of working for MAD Magazine, he met Goscinny. He later let the French Cartoonist take over the writing for his famous Lucky Luke comic book series. With Goscinny writing (from 1955 to his death in 1977), Lucky Luke reached its zenith and it is still considered by many to be the golden age of the comic.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/LuckyLuke.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/LuckyLuke.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Lucky Luke can shoot faster than his own shadow</p></div>
 
-<p>/<em>Rossy</em>/
-In 1951, he left the United States and went to Belgium to work with the World Press in their Brussels Branch. It is here that his life changed forever. He stopped drawing comics and decided to focus on the writing instead. And in 1957 he met Albert Uderzo and started a lifelong partnership.</p>
+<p>In 1951, he left the United States and went to Belgium to work with the World Press in their Brussels Branch. It is here that his life changed forever. He stopped drawing comics and decided to focus on the writing instead. And in 1957 he met Albert Uderzo and started a lifelong partnership.</p>
 
-<p>/<em>Rossy</em>/
-They first started by creating a comic about a Red Indian called Oumpah-pah. Though the series never lasted long, it marked the start of a pairing unrivalled in comic book history.</p>
+<p>They first started by creating a comic about a Red Indian called Oumpah-pah. Though the series never lasted long, it marked the start of a pairing unrivalled in comic book history.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/Ompapa.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/Ompapa.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Ompapa was translated into English by Nicholas Fry</p></div>
 
 <p>Goscinny went on to form his own magazine, Pilot&eacute; in 1959. Its first issue contained a cartoon Asterix the Gaul. Asterix. It was an instant hit. Goscinny and Uderzo became famous all over France.  The "Asterix" strip was translated into 15 languages, and after its appearance in book form (1959) it sold more than 18,000,000 copies worldwide.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/goscinny_uderzo_foto1967.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/goscinny_uderzo_foto1967.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Goscinny and Uderzo at an Asterix reunion in 1967</p></div>
 
 <p>In May 1968 he left Pilote after nine years of affiliation with the magazine that shot him to fame and fortune. But he continued to write stories for Asterix, Lucky Luke and Iznogoud as he pursued his own works. Goscinny had a huge impact on the development of the comic book as it is seen now and was instrumental in discovering new talents for the comic book world.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/Asterix-Cast.png" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/Asterix-Cast.png" alt="" /></p></div>
 
 <div class="caption"><p>The cast of Asterix</p></div>
 
 <p>Goscinny went on to create several comic strips and became world reknowned. He went on to write my personal favourite, Iznogouod. His fame escalated until his death in 1977 at the young age of 51. Both Asterix and Lucky Luke survived his death and were continued by Morris and Uderzo respectively. Critics however agree that both series had their golden age under the great Ren&eacute; Goscinny.</p>
 
-<div class="image"><p><img src="http://localhost:4000/assets/2014-04-11/Iznogoud.jpg" alt="" /></p></div>
+<div class="image"><p><img src="http://cjds.github.io//assets/2014-04-11/Iznogoud.jpg" alt="" /></p></div>
 
 <div class="caption"><p>Iznogoud, my favourite of Goscinny's creations, created with Tarbary (1960)</p></div>
 

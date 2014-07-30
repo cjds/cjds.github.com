@@ -9,9 +9,11 @@ layout: main
 <hr>
 <ul style='list-style:none'>
   {% for post in site.posts %}
+    {% unless post.draft %}
   <li style='text-align:center'>
     <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
+  {% endunless %}
   {% endfor %}
 </ul>
 </div>

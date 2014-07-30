@@ -8,7 +8,7 @@
 
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
 <link href='/css/prettify.css' rel='stylesheet' type='text/css'>
-	<title>5 Lyrics I Like</title>
+	<title>Radial Basis Function Networks Java</title>
 	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>
 <style>
@@ -261,65 +261,137 @@ pre{
   </section>
 </nav>
 <div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
-<h1>5 Lyrics I Like</h1>
+<h1>Radial Basis Function Networks Java</h1>
 
 <hr>
-<p><em>"One good thing about music, when it hits you, you feel no pain. ~ Bob Marley"</em></p>
+<h2>What is A Radial Basis Function Network</h2>
 
-<p>Randomly today I thought I'd write about lyrics. Music is a really subjective subject so if you disagree with me write your own list in the comments. Every one of these lyrics had stories attached. Or at least reasons why they were written.</p>
+<p>This is a type of Neural Network that performs a similar job to a Multilayer Neural Network. That is it can analyze higher dimensional data.</p>
 
-<h3>April Come She Will - Simon &amp; Garfunkel</h3>
+<h2>Benefits</h2>
 
-<p>The contender for this spot was Time by Pink Floyd. Both these songs have immensely similar themes though Time is far more well known. But I love the mellow guitar that plays in April Come She Will. For some reason it reminds me of passing time far more than ticking clocks</p>
-
-<iframe width="480" height="360" src="//www.youtube.com/embed/PYD-DIggB2k" frameborder="0" allowfullscreen></iframe>
-
-
-<p><br><br></p>
-
-<h3>Imagine - John Lennon</h3>
-
-<p><em>You may say I'm a dreamer</em> lets hope I'm not the only one</p>
-
-<iframe width="480" height="360" src="//www.youtube.com/embed/XLgYAHHkPFs" frameborder="0" allowfullscreen></iframe>
+<ul>
+<li>Is capable of fast and accurate learning.</li>
+<li>Only contains one hidden layer</li>
+</ul>
 
 
-<p><br><br></p>
+<h2>How it actually works</h2>
 
-<h3>In My Life - The Beatles (so John Lennon)</h3>
+<p>What this actually does is place <em>n</em> points across your data set. Then taking an assigned original equation it changes certain terms in the equation so that the curve of the changed equation represents the data set.</p>
 
-<p>In My Life was always about reminiscing. Whenever I think of the way things were or how things seemed in the past I think of it. Always reminds me that <em>I know I'll never lose affection, For people and things that went before, I know I'll often stop and think about them, In my life I love you more.</em></p>
+<p>After training, it decides how best to match the data based on the function of those <em>n</em> points</p>
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/Zicw_dVwhfM" frameborder="0" allowfullscreen></iframe>
+<p>So lets say you had to solve the EX-OR problem</p>
+
+<p>The truth table would be as follows and you had to make a neural net learn it.
+Obviously there is no straight line that will solve your problem.
+So you have to draw a curved line that fits the data.
+So RBF can help. Lets say we put two points on the input space and draw 2 Gaussian curves atthose points.</p>
+
+<p> Well now our data got split up quite nicely.</p>
+
+<p> That's basically how RBF works.</p>
+
+<h2>Training</h2>
+
+<p>Training is going to be done by one of the simplest techniques. This is known as the Pseudo-Inverse Technique</p>
+
+<h2>Program</h2>
+
+<pre><code>public class rbfn {
+public static void main(String a[]){
+    Net n=new rbfn().new Net();
+    for(int i=0;i&lt;100;i++){
+        n.train();
+    }
+    n.test(new double[]{0,0});
+    n.test(new double[]{0,1});
+    n.test(new double[]{1,0});
+    n.test(new double[]{1,1});
 
 
-<p><br><br></p>
+}
 
-<h3>Roll The Dice - Koufax</h3>
+class Net{
+    double[][] inputs=new double[][]{{0,0},{0,1},{1,0},{1,1}};
+    double[] outputs= {1,0,0,1};
+    Unit[] net =new Unit[2];
 
-<p>This is the least famous song on the list but with some absolutely astounding lyrics. The lyrics though speak for themselves.
-From they're opening reference to George Orwell's 1985 ( <em>Eric Blair was right ..</em> ) to the last verse discussing Jean Paul Sartre ( <em>a thinking man chose to pass up a Nobel Prize</em>) this song is a masterpiece in poetry.</p>
+    Net(){
+        net[0]=new Unit(0.5,new double[]{0,0},0.5);
+        net[1]=new Unit(0.5,new double[]{1,1},0.5);
+    }
 
-<p>If you listen carefully this song will cause you to question institutionalism in a fundamental way.</p>
+    void train(){
+        for(int i=0;i&lt;inputs.length;i++){
+            double output=outputs[i];
+            double predictedoutput=0;
+            for(int j=0;j&lt;inputs[i].length;j++){
+                predictedoutput+=net[j].phi(inputs[i])*net[j].w;        
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/Qb7MRSLThYc" frameborder="0" allowfullscreen></iframe>
+            }
+            //predictedoutput= Math.round(predictedoutput);
+
+            for(int j=0;j&lt;inputs[i].length;j++){
+                net[j].update(inputs[i], output, predictedoutput);
+            }
+        }
+    }
+
+    void test(double[] inputs){
+        double predictedOutput=0;
+        for(int i=0;i&lt;inputs.length;i++){
+            predictedOutput+=net[i].phi(inputs)*net[i].w;
+            System.out.print(net[i].w +"\t"+net[i].c[0]+"\t"+net[i].c[1]+"\t");
+        }
+        System.out.println();   
+        for(int i=0;i&lt;inputs.length;i++){
+            System.out.print(inputs[i]+"\t");
+        }
+        System.out.print(predictedOutput);
+        System.out.println();   
+
+    }
 
 
-<p><br><br></p>
+class Unit{
+    double w;
+    double c[];
+    double sigma;
+    double n1=0.1;
+    double n2=0.1;
+    Unit(double sigma,double[] center,double weight){
+        this.sigma=sigma;
+        this.c=center;
+        this.w=weight;
 
-<h3>Blowin' In The Wind - Bob Dylan</h3>
+    }
 
-<p>I won't bother talking about this one. I'll let Bob Dylan do it</p>
+    double phi(double[] input){
+        double distance=0;
+        for(int i=0;i&lt;c.length;i++)
+            distance+=Math.pow(input[i]-c[i],2);
+        return Math.pow(Math.E,- distance/(2*Math.pow(sigma, 2)));
+    }
 
-<blockquote><p>There ain't too much I can say about this song except that the answer is blowing in the wind. It ain't in no book or movie or TV show or discussion group. Man, it's in the wind ...just like a restless piece of paper it's got to come down some  ...But the only trouble is that no one picks up the answer when it comes down so not too many people get to see and know</p></blockquote>
+    void update(double[] input,double desired,double output){
+        double phi=phi(input);
+        double diffOutput=desired-output;
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/3l4nVByCL44" frameborder="0" allowfullscreen></iframe>
+        for(int i=0;i&lt;c.length;i++)
+            c[i]=c[i]+ (n1*diffOutput*w* phi*(input[i]-c[i])/(sigma*sigma));
 
 
-<p><br><br></p>
+        w=w+(n2*diffOutput*phi);
+    }
+}
+}
+}
+</code></pre>
 
 <hr>
-<i>21 Apr 2014 </i>
+<i>07 May 2014 </i>
 </div>
 <script type='text/javascript'>
 $( document ).ready(function(){

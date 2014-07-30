@@ -13,8 +13,12 @@
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
 
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
@@ -105,6 +109,44 @@ h3{
  	margin-bottom: 5px;
  }
 
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
 .top-bar{
 	background-color:#fff;
 	position: absolute;
@@ -119,7 +161,7 @@ h3{
  	color:#000 !important;
 
  }
-/*
+
  code{
  	overflow: auto;
 
@@ -199,14 +241,26 @@ pre{
  }
 </style>
 <body>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area left">
     <li class="name">
-      <h1><a href="http://localhost:4000">Carl's Blog</a></h1>
+      <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
+    
   </ul>
+
+  <section class="top-bar-section">
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <ul class="right">
+      <li><a href="http://cjds.me/about">About</a></li>
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
 </nav>
-<div class='large-6 large-offset-3 medium-8 medium-offset-2 post-div'>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
 <h1>Google Single Sign On Makes Me Nervous</h1>
 
 <hr>
@@ -214,9 +268,9 @@ pre{
 
 <p>Google has had their single sign on policy for a while now, and it keeps getting more ubiquitous each day. Their latest incarnation sports a home page which says "One Account. All of Google". It keeps your notifications, your YouTube videos, your e-mails, pretty much everything you do on the internet.</p>
 
-<div class="image"><p><img src='http://localhost:4000/assets/2014-04-10/1.png' /></p></div>
+<div class="image"><p><img src='http://cjds.github.io//assets/2014-04-10/1.png' /></p></div>
 
-<p>While Reddit might call itself the Front Page of the Internet, Google are the company that own the paper. Google services provide us with the ability to do pretty much anything and most of it brilliantly (except you Google+). Youtube, Google Books, the Play Store, Maps. All those services can be accessed one one machine with one password. Its fair enough to say that Google has a ton of harmless and yet potentially horrible information about it.</p>
+<p>While Reddit might call itself the Front Page of the Internet, Google is the company that owns the paper. Google services provide us with the ability to do pretty much anything and most of it brilliantly (except you Google+). Youtube, Google Books, the Play Store, Maps. All those services can be accessed on one machine with one password. Its fair enough to say that Google has a ton of harmless and yet potentially horrible information about it.</p>
 
 <p>The question is what's the real problem in having a single sign on policy on your devices. I will answer the question with an anecdote.</p>
 
