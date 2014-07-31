@@ -1,5 +1,7 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
@@ -7,9 +9,14 @@
 		<script type="text/javascript" src="/js/jquery.js"></script>
 
 	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
-<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+		<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
 	<title>Tutorial: Using Wordnik and Big Thesaurus API</title>
 	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+
+  
+
+
 </head>
 <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
@@ -235,7 +242,7 @@ pre{
  }
 
  .post-div > h1{
- 	margin-top: 30px;
+ 	margin-top: 10px;
  	margin-bottom: 1px;
 
  }
@@ -243,16 +250,18 @@ pre{
 <body>
 
 <nav class="top-bar" data-topbar >
-  <ul class="title-area left">
+  <ul class="title-area">
     <li class="name">
       <h1><a href="http://cjds.me" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
-    
+        <li class="toggle-topbar menu-icon" style='font-family:Mohave'><a href="#"></a></li>
+
   </ul>
 
   <section class="top-bar-section">
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    
     <ul class="right">
+
       <li><a href="http://cjds.me/about">About</a></li>
       <li><a href="http://cjds.github.io/">Blog</a></li>
       </li>
@@ -360,6 +369,13 @@ try{
 <hr>
 <i>04 Apr 2014 </i>
 </div>
+<script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.topbar.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+  
 <script type='text/javascript'>
 $( document ).ready(function(){
 

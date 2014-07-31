@@ -5898,7 +5898,7 @@ meta.foundation-mq-topbar {
   width: 16px;
   top: 0;
   height: 0;
-  box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
+  box-shadow: 0 10px 0 1px black, 0 16px 0 1px black, 0 22px 0 1px black;
 }
 /* line 253, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded {
@@ -5907,7 +5907,8 @@ meta.foundation-mq-topbar {
 }
 /* line 257, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .title-area {
-  background: #333333;
+  background: #fff;
+  border-bottom: 1px solid black;
 }
 /* line 260, ../bower_components/foundation/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a {
