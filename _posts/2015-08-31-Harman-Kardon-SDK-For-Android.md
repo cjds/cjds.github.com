@@ -28,7 +28,7 @@ When you are asked to "Add an activity to Mobile", select **Blank Activity**.
 Give the activity the name `Device_List`, the layout the name `device_list`, and the title `Device List`.
 
 
-![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/screenshot.jpg)
+![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/screenshot.png)
 
 ------------
 
