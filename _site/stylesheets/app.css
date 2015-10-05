@@ -6803,12 +6803,6 @@ small {
   line-height: inherit;
 }
 
-/* line 281, ../bower_components/foundation/scss/foundation/components/_type.scss */
-code {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  font-weight: bold;
-  color: #bd260d;
-}
 
 /* Lists */
 /* line 290, ../bower_components/foundation/scss/foundation/components/_type.scss */

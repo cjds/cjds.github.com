@@ -1,0 +1,803 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>-->
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+		<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>Harman Kardon Android SDK Tutorial</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+  
+
+
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	/*font-weight: 900*/
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	color:#444;
+	font-family: 'Raleway', serif;
+	font-size: 1.8em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+
+ hr:not(:first-child){
+ 	margin: auto;
+ 	margin-top: 40px;
+ 	margin-bottom: 40px;
+ 	width: 160px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	margin-top: 50px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 10px;
+ 	margin-bottom: 1px;
+ 	font-family: 'Mohave';
+ 	text-align: center;
+ 	font-weight: 300
+
+ }
+
+ .top-bar .toggle-topbar a{
+ 	font-size: 1.4em;
+ 	color:#333;
+ 	font-weight: 300;
+ }
+
+</style>
+<body>
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://carlsaldanha.com" style='text-align:left' >Carl Saldanha</a></h1>
+    </li>
+        <li class="toggle-topbar" style='font-family:Mohave;color:#666'><a href="#">Menu</a></li>
+
+  </ul>
+
+  <section class="top-bar-section">
+    
+    <ul class="right">
+
+      <li><a href="http://carlsaldanha.com/resume">Resume</a></li>
+      <li><a href="http://carlsaldanha.com/projects">Projects</a></li>
+
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
+<h1>Harman Kardon Android SDK Tutorial</h1>
+
+<hr>
+<h2>About this tutorial</h2>
+
+<blockquote><p>This project is built for Android 4.0 minimum
+Prequisites are Android Studio 0.8.6</p></blockquote>
+
+<p>This tutorial leads you through the creation of a simple app that uses the Harman Kardon Android SDK to play an audio track on your speaker. We show you how to:</p>
+
+<ul>
+<li>Set up an Android Studio project for your app,</li>
+<li>Play an audio stream on your Omni 10 or Omni 20</li>
+</ul>
+
+
+<hr />
+
+<h2>Creating a Project</h2>
+
+<p>Open Android Studio and create a <strong>New Project.</strong></p>
+
+<p>Set the Minimum SDK version to "API level 14: Android 4.0 (Ice Cream Sandwich)".</p>
+
+<p>When you are asked to "Add an activity to Mobile", select <strong>Blank Activity</strong>.</p>
+
+<p>Give the activity the name <code>Device_List</code>, the layout the name <code>device_list</code>, and the title <code>Device List</code>.</p>
+
+<p><img src="http://cjds.github.io//assets/2015-08-31/screenshot.jpg" alt="" /></p>
+
+<hr />
+
+<h2>Updating the Library</h2>
+
+<p>In a file explorer (not Android Studio), drag the <code>HKWirelessHD.jar</code> files into the <code>/app/libs</code> directory in your project's root directory.</p>
+
+<hr />
+
+<h2>Adding to the Gradle</h2>
+
+<p>In Android studio right click on the app pane on the left hand side. Go to Folder> JNI folder. Name the folder jniLibs  click Finish and a new folder will be created.
+Copy the <code>libHKWirelessHD.SO</code> files into this  folder</p>
+
+<p>Go to the <code>build.gradle</code> for the Module app then add following line to the dependencies <code>compile files('libs/HKWirelessHD.jar')</code></p>
+
+<p>Your dependencies should look like this</p>
+
+<pre><code>dependencies {                                     
+    compile 'com.android.support:support-v4:19.1.0'
+    compile files('libs/HKWirelessHD.jar')         
+}                                                  
+</code></pre>
+
+<hr />
+
+<h2>Creating the Layouts</h2>
+
+<p>There are 2 layouts that we need for this project. The first contains a <code>ListView</code> for the devices, and buttons to control the playback of the device.
+The second is the item layout for the <code>ListView</code>.</p>
+
+<p>First create an Acitivity called <code>Device_List</code> and add the following items to the XML</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" &gt;
+
+    &lt;ListView
+        android:id="@+id/device_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp" &gt;
+    &lt;/ListView&gt;
+    &lt;Button
+        android:id="@+id/refresh_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:text="Refresh"  /&gt;
+    &lt;Button
+        android:id="@+id/play_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/refresh_btn"
+        android:layout_alignParentBottom="true"
+        android:text="Play"  /&gt;
+    &lt;Button
+        android:id="@+id/pause_btn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/play_btn"
+        android:layout_alignParentBottom="true"
+        android:text="Pause"  /&gt;
+&lt;/RelativeLayout&gt;
+</code></pre>
+
+<p>Then, create a file <code>device_list_item.xml</code>. This has a <code>TextView</code> and a checkbox to change whether we are playing to that device or not</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;    
+&lt;RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:orientation="horizontal" 
+    android:layout_width="fill_parent"        
+    android:layout_height="50dp"
+    android:id="@+id/device_list_item"&gt; 
+
+
+    &lt;TextView android:id="@+id/device_name" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp" 
+        android:textSize="35px" /&gt;
+
+    &lt;CheckBox
+        android:id="@+id/select"
+        android:layout_alignParentRight="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:focusable="false"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:checked="false" /&gt;
+
+&lt;/RelwativeLayout&gt;
+</code></pre>
+
+<hr />
+
+<h2>Creating a Utilities Class</h2>
+
+<p>Before we make the activity, we make a Utility class. This Utilities class will use the <code>HKWirelessHandler</code> class from the Library we import at the beginning. Create a class called <code>Util</code></p>
+
+<p>First we will create some signaling integers for sharing information between the Activity and the Service</p>
+
+<pre><code>public static final int MSG_PCM_PLAY = 2;
+public static final int MSG_PCM_PAUSE = 3;
+
+public static final String MSG_TYPE_MUSIC = "msg";
+public static final String MSG_URL_MUSIC = "url";
+</code></pre>
+
+<p>We then create an inner class called <code>DeviceData</code>, which will store a list of devices connected to your WiFi</p>
+
+<pre><code>public class DeviceData {
+    public DeviceObj deviceObj;
+    public Boolean status;
+}
+
+private List&lt;DeviceData&gt; devices = new ArrayList&lt;DeviceData&gt;();
+</code></pre>
+
+<p>Now, lets create an instance of <code>HKWirelessHandler</code> and an Instance using the <a href="https://en.wikipedia.org/wiki/Singleton_pattern">singleton pattern</a></p>
+
+<pre><code>public  HKWirelessHandler hkwireless = new HKWirelessHandler();
+private static Util instance = new Util();
+
+
+public static Util getInstance() {
+    return instance;
+}
+</code></pre>
+
+<p>Now, create 4 functions for initializing the speaker and getting information about the current devices</p>
+
+<pre><code>public void initDeviceInfor() {
+    synchronized (this) {
+        devices.clear();
+        if (!hkwireless.isInitialized())return;
+
+        for (int i=0; i&lt;hkwireless.getDeviceCount(); i++) {
+            DeviceData device = new DeviceData();
+            device.deviceObj = hkwireless.getDeviceInfoByIndex(i);
+            device.status = hkwireless.isDeviceActive(device.deviceObj.deviceId);
+            devices.add(device);
+        }
+    }
+}
+
+public void refreshDeviceInfoOnce(){
+    hkwireless.refreshDeviceInfoOnce();
+}
+
+public List&lt;DeviceData&gt; getDevices() {
+    return devices;
+}
+
+public boolean getDeviceStatus(int position) {
+    return devices.get(position).status;
+}
+</code></pre>
+
+<p>Now, we need to add methods update the device status and add or remove devices</p>
+
+<pre><code>public void updateDeviceStatus(long deviceid){
+    for (int i=0; i&lt;devices.size(); i++) {
+        DeviceData device = devices.get(i);
+        if (device.deviceObj.deviceId == deviceid) {
+            device.deviceObj = hkwireless.findDeviceFromList(deviceid);
+            if (device.deviceObj == null) {
+                devices.remove(i);
+            } else {
+                device.status = hkwireless.isDeviceActive(device.deviceObj.deviceId);
+                devices.set(i, device);
+            }
+            break;
+        }
+    }
+}
+
+public boolean removeDeviceFromSession(long deviceid){
+    boolean ret = hkwireless.removeDeviceFromSession(deviceid);
+    if (ret) {
+        updateDeviceStatus(deviceid);
+    }
+    return ret;
+}
+
+public boolean addDeviceToSession(long deviceid){
+    boolean ret = hkwireless.addDeviceToSession(deviceid);
+    if (ret) {
+        updateDeviceStatus(deviceid);
+    }
+    return ret;
+}
+</code></pre>
+
+<hr />
+
+<h2>Create The Activity</h2>
+
+<p>Now we add to the activity which connects the Utilities class to the front  end. Go to <code>Device_List.java</code> which was created earlier.</p>
+
+<p>First we need some constants. One a URL for the song we are going to play, the second which is the Key to Activate the Key and a copy of the Utilities class</p>
+
+<pre><code>String url="/storage/emulated/0/Music/Bowling for Soup/1985.mp3";
+
+private static final String KEY = "2FA8-2FD6-C27D-47E8-A256-D011-3751-2BD6";
+
+private Util util= Util.getInstance();
+</code></pre>
+
+<p>Now, we setup an inner class for an Adapter. This will allow us to create the custom <code>ListView</code> we need.</p>
+
+<pre><code>class DeviceAdapter extends BaseAdapter {
+    private LayoutInflater mInflater;
+
+    public DeviceAdapter(Context context){
+        this.mInflater=LayoutInflater.from(context);
+    }
+
+    public int getCount() {
+        return util.getDevices().size();
+    }
+
+    public Object getItem(int position) {
+        return util.getDevices().get(position);
+    }
+
+    public long getItemId(int position) {
+        return position;
+    }
+
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        convertView = mInflater.inflate(R.layout.device_list_item, null);
+        final TextView textView = (TextView)convertView.findViewById(R.id.device_name);
+        final CheckBox checkbox = (CheckBox)convertView.findViewById(R.id.select);
+
+
+        textView.setText(util.getDevices().get(position).deviceObj.deviceName);
+        if (util.getDeviceStatus(position)) {
+            checkbox.setChecked(true);
+        } else {
+            checkbox.setChecked(false);
+        }
+
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                if (util.getDeviceStatus(position)) {
+                    util.removeDeviceFromSession(util.getDevices().get(position).deviceObj.deviceId);
+                    checkbox.setChecked(false);
+                } else {
+                    util.addDeviceToSession(util.getDevices().get(position).deviceObj.deviceId);
+                    checkbox.setChecked(true);
+                }
+            }
+        });
+        return convertView;
+    }
+}
+</code></pre>
+
+<p>Next we override the <code>onCreate</code>, we initialize the HK Wireless and then overriding the <code>onClick</code> for the buttons we created earlier</p>
+
+<pre><code>protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.devicelist);
+
+    /**Registering overriding methods for the Wireless Controller**/
+     * Over here you can override the methods to let your app react to
+     * events tht happen on the speaker
+     **/
+    util.hkwireless.registerHKWirelessControllerListener(new HKWirelessListener() {
+
+        @Override
+        public void onPlayEnded() {}
+
+        @Override
+        public void onPlaybackStateChanged(int arg0) {}
+
+        @Override
+        public void onPlaybackTimeChanged(int arg0) {}
+
+        @Override
+        public void onVolumeLevelChanged(long deviceId, int deviceVolume,int avgVolume) {}
+
+        @Override
+        public void onDeviceStateUpdated(long deviceId, int reason) {}
+
+        @Override
+        public void onErrorOccurred(int errorCode, String errorMsg) {
+            Toast.makeText(MainActivity.this, errorMsg, Toast.LENGTH_LONG).show();
+        }
+    });
+
+    /**Initializing the HK Controller **/
+    if (!util.hkwireless.isInitialized()) {
+        util.hkwireless.initializeHKWirelessController(KEY);
+        if (util.hkwireless.isInitialized()) {
+            Toast.makeText(this, "Wireless controller init success", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Wireless controller init fail", Toast.LENGTH_LONG).show();
+        }
+    }
+    /**This call will add the speakers connected to your WiFi **/
+    util.initDeviceInfor();
+
+    /*The listView for the list of devices on display*/
+    ListView deviceList = (ListView)(this.findViewById(R.id.device_list));
+    /*DeviceAdapter for the ListView of devices*/
+    DeviceAdapter adapter = new DeviceAdapter(this);
+    deviceList.setAdapter(adapter);
+
+    //On Click for the REFRESH button
+    (this.findViewById(R.id.refresh_btn)).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            util.refreshDeviceInfoOnce();
+        }
+    });
+
+    //On click for the PLAY button
+    (this).findViewById(R.id.play_btn).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            playMusic();
+        }
+    });
+
+    //on click pause button
+    (this.findViewById(R.id.pause_btn)).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            pauseMusic();
+        }
+    });
+
+}
+</code></pre>
+
+<p>Now, we have to write the methods for playing and pausing music which we mentioned in the <code>onCreate</code></p>
+
+<pre><code>private void pauseMusic(){
+    //start the service to run the Audio Codec
+    //we add a message to pause the song
+    Intent intent = new Intent();
+    intent.putExtra(Util.MSG_URL_MUSIC, url);
+    intent.putExtra(Util.MSG_TYPE_MUSIC, Util.MSG_PCM_PAUSE);
+    intent.setPackage(MainActivity.this.getPackageName());
+    MainActivity.this.startService(intent);
+}
+
+private void playMusic() {
+    if (util.getDevices().size() == 0) {
+        Toast.makeText(this, "No device connected", Toast.LENGTH_LONG).show();
+        return;
+    }
+    List&lt;Util.DeviceData&gt; devices = util.getDevices();
+    if (devices.size() &lt;= 0){
+        Toast.makeText(this, "No device in use", Toast.LENGTH_LONG).show();
+        return;
+    }
+
+    for (int i=0; i&lt;devices.size(); i++) {
+        if (!util.getDeviceStatus(i)) {
+            Toast.makeText(this, "No device in use", Toast.LENGTH_LONG).show();
+            return;
+        }
+    }
+    //start the service to run the Audio Codec
+    //we add a message to play so that can play the song
+    Intent intent = new Intent();
+    intent.putExtra(Util.MSG_URL_MUSIC, url);
+    intent.putExtra(Util.MSG_TYPE_MUSIC, Util.MSG_PCM_PLAY);
+    intent.setPackage(this.getPackageName());
+    this.startService(intent);
+}
+</code></pre>
+
+<hr />
+
+<h2>Creating the Service</h2>
+
+<p>This is the last part of the Program. We create a Service that starts up. We have already attempted to start the service in the <code>pauseMusic()</code> and <code>playMusic()</code> methods. The service is as follows</p>
+
+<pre><code>private AudioCodecHandler pcmCodec = new AudioCodecHandler();
+
+@Override
+public IBinder onBind(Intent arg0) {
+    return null;
+}
+
+@Override
+public int onStartCommand(Intent intent, int flags, int startId) {
+
+    if (intent != null) {
+        int cmd = intent.getIntExtra(Util.MSG_TYPE_MUSIC, 0);
+        if (cmd == Util.MSG_PCM_PLAY) {
+            final String url = intent.getStringExtra(Util.MSG_URL_MUSIC);
+            String songName =  url.substring(url.lastIndexOf("/"));
+            pcmCodec.playCAFFromCertainTime(url, songName, 0);
+        } else if (cmd == Util.MSG_PCM_PAUSE) {
+            pcmCodec.stop();
+        }
+    }
+    return super.onStartCommand(intent, flags, startId);
+}
+</code></pre>
+
+<hr />
+
+<h2>Changing the Manifest</h2>
+
+<p>The manifest settings are the last bit of the program that's left. Add these permissions after the activity tag on the Manifest</p>
+
+<pre><code>&lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&gt;
+&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;
+&lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+&lt;uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" /&gt;
+
+&lt;uses-permission android:name="android.permission.INTERNET"/&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/&gt;
+&lt;uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/&gt;
+&lt;uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/&gt;
+&lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/&gt;
+&lt;uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/&gt;
+&lt;uses-permission android:name="android.permission.WRITE_SETTINGS"/&gt;
+
+&lt;uses-permission android:name="android.permission.ADD_SYSTEM_SERVICE"/&gt;
+</code></pre>
+
+<p>Also, we can add the activity to the srvice</p>
+
+<pre><code>&lt;service
+    android:name="com.harman.wirelessomni.MusicPlayerService"&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="com.harman.wirelessomni.MainActivity" /&gt;
+    &lt;/intent-filter&gt;
+&lt;/service&gt;
+</code></pre>
+
+<hr />
+
+<h2>Get the Code</h2>
+
+<ul>
+<li><p>It should work now. Before running make sure you connect your speaker to the WiFi. Here's a <a href="https://www.youtube.com/watch?v=8IdBUwPCYgA">link</a> of how to do it</p></li>
+<li><p>Link to the <a href="http://developer.harman.com/site/global/home/p_home.gsp">Harman Developer Docs</a></p></li>
+<li><p>Here's the code on <a href="https://github.com/cjds/wirelessomnitutorial">Github</a></p></li>
+</ul>
+
+
+<hr>
+<i>31 Aug 2015 </i>
+</div>
+<script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.topbar.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+  
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>

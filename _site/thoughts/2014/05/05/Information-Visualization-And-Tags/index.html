@@ -3,8 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>-->
 	<script type="text/javascript" href="/js/foundation.min.js"></script>
 		<script type="text/javascript" src="/js/jquery.js"></script>
 
@@ -12,7 +12,7 @@
 		<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
 	<title>Information Visualization And Tags</title>
 	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
   
 
@@ -30,18 +30,18 @@
 ol li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
  	font-size: 1.1em;
- 	color:#222;
+ 	color:#344;
  }
 
  ul li{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
  	font-size: 1.1em;
- 	color:#222;
+ 	color:#344;
  }
  p{
  	font-family: "Lora","Helvetica",Arial,sans-serif;
  	font-size: 1.1em;
- 	color:#222;
+ 	color:#344;
  	text-align:justify;
  	margin-top:10px;
  	margin-bottom: 20px;
@@ -95,7 +95,7 @@ hr {
 }
 
  h1,h2,h3,h4,h5,h6{
- 	font-weight: 900;
+ 	/*font-weight: 900*/
  }
 
  h1{
@@ -103,7 +103,9 @@ hr {
  }
 
 h2{
-	font-size: 1.6em;
+	color:#444;
+	font-family: 'Raleway', serif;
+	font-size: 1.8em;
 }
 
 h3{
@@ -111,11 +113,19 @@ h3{
 }
 
 
+
  hr{
  	margin:0px;
  	margin-bottom: 5px;
  }
 
+
+ hr:not(:first-child){
+ 	margin: auto;
+ 	margin-top: 40px;
+ 	margin-bottom: 40px;
+ 	width: 160px;
+ }
 
 .top-bar{
 	background-color:#fff;
@@ -250,6 +260,13 @@ pre{
  	font-weight: 300
 
  }
+
+ .top-bar .toggle-topbar a{
+ 	font-size: 1.4em;
+ 	color:#333;
+ 	font-weight: 300;
+ }
+
 </style>
 <body>
 
@@ -258,7 +275,7 @@ pre{
     <li class="name">
       <h1><a href="http://carlsaldanha.com" style='text-align:left' >Carl Saldanha</a></h1>
     </li>
-        <li class="toggle-topbar" style='font-family:Mohave'><a href="#"></a></li>
+        <li class="toggle-topbar" style='font-family:Mohave;color:#666'><a href="#">Menu</a></li>
 
   </ul>
 

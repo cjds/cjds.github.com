@@ -15,6 +15,7 @@ Hebbian Learning is the simplest form aof a neural network I can describe. It is
  What we're basically doing is pattern learning. Present a series of inputs to the system. The most common patterns will produce the largest reaction by the system. This is a type of unsupervised learning. We don't tell the computer the right answer. During training we just present input and the computer guesses it during testing. 
  
  ###Program
+ 
  Well now we are testing with certain inputs
  We're training with certain patterns and when we test will see of those patterns have higher firing rates.
  

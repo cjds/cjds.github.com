@@ -1,77 +1,82 @@
-/* Tomorrow Night Eighties Theme */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-.prettyprint {
-  background: #2d2d2d;
-  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
-  font-size: 12px;
-  line-height: 1.5;
-  border: 1px solid #ccc;
-  padding: 5px;
-}
+/* Atelier Savanna Light by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/savanna) */
 
-.prettyprint .pln{
-  line-height: 1.5;
-  padding: 2px;
-  color: #cccccc;
+/* plain text */
+.pln {
+  color: #171c19;
 }
 
 @media screen {
+  /* string content */
   .str {
-    color: #99cc99;
+    color: #489963;
   }
 
+  /* a keyword */
   .kwd {
-    color: #cc99cc;
+    color: #55859b;
   }
 
+  /* a comment */
   .com {
-    color: #999999;
+    color: #78877d;
   }
 
+  /* a type name */
   .typ {
-    color: #6699cc;
+    color: #478c90;
   }
 
+  /* a literal value */
   .lit {
-    color: #f99157;
+    color: #9f713c;
   }
 
+  /* punctuation */
   .pun {
-    color: #cccccc;
+    color: #171c19;
   }
 
+  /* lisp open bracket */
   .opn {
-    color: #cccccc;
+    color: #171c19;
   }
 
+  /* lisp close bracket */
   .clo {
-    color: #cccccc;
+    color: #171c19;
   }
 
+  /* a markup tag name */
   .tag {
-    color: #f2777a;
+    color: #b16139;
   }
 
+  /* a markup attribute name */
   .atn {
-    color: #f99157;
+    color: #9f713c;
   }
 
+  /* a markup attribute value */
   .atv {
-    color: #66cccc;
+    color: #1c9aa0;
   }
 
+  /* a declaration */
   .dec {
-    color: #f99157;
+    color: #9f713c;
   }
 
+  /* a variable name */
   .var {
-    color: #f2777a;
+    color: #b16139;
   }
 
+  /* a function name */
   .fun {
-    color: #6699cc;
+    color: #478c90;
   }
 }
+/* Use higher contrast and text-weight for printable form. */
 @media print, projection {
   .str {
     color: #006600;
@@ -113,6 +118,18 @@
     color: #006600;
   }
 }
+/* Style */
+pre.prettyprint {
+  background: #ecf4ee;
+  color: #87928a;
+  font-family: Menlo, Consolas, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #dfe7e2;
+  padding: 10px;
+  /* border-radius: 3px; */
+}
+
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   margin-top: 0;
