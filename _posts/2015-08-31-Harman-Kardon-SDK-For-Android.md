@@ -15,6 +15,11 @@ This tutorial leads you through the creation of a simple app that uses the Harma
 * Set up an Android Studio project for your app,
 * Play an audio stream on your Omni 10 or Omni 20
 
+This is an image of the file that we are creating
+
+>%image%
+>![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/screenshot.png =200x)
+
 ---------
 
 ##Creating a Project
@@ -27,8 +32,6 @@ When you are asked to "Add an activity to Mobile", select **Blank Activity**.
 
 Give the activity the name `Device_List`, the layout the name `device_list`, and the title `Device List`.
 
-
-![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/screenshot.png)
 
 ------------
 
