@@ -1,0 +1,372 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>-->
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+		<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>Visual Question Generation</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+  
+
+
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	/*font-weight: 900*/
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	color:#444;
+	font-family: 'Raleway', serif;
+	font-size: 1.8em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+
+ hr:not(:first-child){
+ 	margin: auto;
+ 	margin-top: 40px;
+ 	margin-bottom: 40px;
+ 	width: 160px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	margin-top: 50px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 10px;
+ 	margin-bottom: 1px;
+ 	font-family: 'Mohave';
+ 	text-align: center;
+ 	font-weight: 300
+
+ }
+
+ .top-bar .toggle-topbar a{
+ 	font-size: 1.4em;
+ 	color:#333;
+ 	font-weight: 300;
+ }
+
+</style>
+<body>
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://carlsaldanha.com" style='text-align:left' >Carl Saldanha</a></h1>
+    </li>
+        <li class="toggle-topbar" style='font-family:Mohave;color:#666'><a href="#">Menu</a></li>
+
+  </ul>
+
+  <section class="top-bar-section">
+    
+    <ul class="right">
+
+      <li><a href="http://carlsaldanha.com/resume">Resume</a></li>
+      <li><a href="http://carlsaldanha.com/projects">Projects</a></li>
+
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
+<h1>Visual Question Generation</h1>
+
+<hr>
+<h3>Motivation</h3>
+
+<p>We propose creating a artificial dataset of natural language questions about images.</p>
+
+<h3>Introduction</h3>
+
+<p>There have a been a string of successes in using deep learning for object recognition and image captioning among other tasks.
+However, algorithms that truly understand scenes is still unsolved. Our focus is on generating large datasets of questions for images to train on. The idea behind this, is that if an algorithm could ask a series of questions about images that it's seeing, it could potentially one day learn how to answer them.</p>
+
+<p>The sapce for asking questions however, is much</p>
+
+<h3>Related Work</h3>
+
+<p>While there have not been attempts to learn the question space from images, there have been attempts at creating a series of questions about bodies of text.</p>
+
+<p>In Computer-Aided Generation of Multiple-Choice Tests, the authors picked the key nouns in the paragraph and and then use a regular expression to generate the question.
+In the image domain, there have been attempts at visual question generation and image understanding. To do this there have been multiple datasets created, though they're overall size is small when comparing to datasets like MSCOCO and ImageNet</p>
+
+<p>Visual Madlibs</p>
+
+<p>VQA is a dataset that has a series of non-trivial questions about the images that are contained within. They also contain Mulitiple Choice along with Open Ended question
+Visual Genome Project is a similar dataset that contains a list of relationships between objects in images, that potentially could benefit large scale scene understanding.</p>
+
+<h3>Algorithm</h3>
+
+<p>There are three methods that we are going to discuss. We are using the VQA dataset to create our series of questions. The first is a baseline test of passing a series of Convolution based features to an LSTM and training it to output a bag of words which forms the sentence.</p>
+
+<p>The second method uses the  VQA is a set of question answer pairs against.</p>
+
+<h3>Network Description</h3>
+
+<p>We used the VGG net 16 and Res Net to as a CNN to create image features</p>
+
+<p><img src='http://cjds.github.io//assets/2016-05-02/network.png' style="margin-top:50px"/></p>
+
+<p>The work was done in Torch and can be found here</p>
+
+<h3>Results</h3>
+
+<h3>References</h3>
+
+<p>Mitkov, R., &amp; Ha, L. A. (2003, May). Computer-aided generation of multiple-choice tests. In Proceedings of the HLT-NAACL 03 workshop on Building educational applications using natural language processing-Volume 2 (pp. 17-22). Association for Computational Linguistics.</p>
+
+<p>Aldabe, Itziar, et al. "Arikiturri: an automatic question generator based on corpora and nlp techniques." Intelligent Tutoring Systems. Springer Berlin Heidelberg, 2006.</p>
+
+<p>Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations
+Ranjay Krishna, Yuke Zhu, Oliver Groth, Justin Johnson, Kenji Hata, Joshua Kravitz, Stephanie Chen, Yannis Kalantidis, Li Jia-Li, David Ayman Shamma, Michael Bernstein, Li Fei-Fei</p>
+
+<hr>
+<i>02 May 2016 </i>
+</div>
+<script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.topbar.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+  
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>
