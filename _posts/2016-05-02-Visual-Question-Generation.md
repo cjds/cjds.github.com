@@ -18,21 +18,19 @@ However, the sapce for asking questions is much larger than the space of answers
 
 There is not any directly applicable work in the   not been attempts to learn the question space from images, there have been attempts at creating a series of questions about bodies of text.
 
-In Computer-Aided Generation of Multiple-Choice Tests[3], the authors picked the key nouns in the paragraph and and then use a regular expression to generate the question. 
+In Computer-Aided Generation of Multiple-Choice Tests[3], the authors picked the key nouns in the paragraph and and then use a regular expression to generate the question. In Arikiturri [4], they use a corpus of words and then choose the most relevant words in a given passage to ask questions from. These questions are again designed to fit a specific regular structure. Few attempts have been made in recent years, and most of them rely on fixed patterns for the questions.
+
 In the image domain, there have been attempts at visual question generation and image understanding. To do this there have been multiple datasets created, though they're overall size is small when comparing to datasets like MSCOCO and ImageNet
+Visual Madlibs[6]: In Visual madlibs people generate fill in the blank question answer pairs which can be used in deep learning models to understand more about the images in them. VQA[1] is another dataset that has a series of non-trivial questions about the images which are sourced both from MS COCO and from a custom abstract scene creation tool. They also contain Mulitiple Choice along with Open Ended question The Visual Genome project by Fei Fei Li et al, takes dense descriptions from a series of images and tries to build relations between all the objectd in the scene. Lastly we have Visual 7w which attempts to split questions into 7 types based on the starting words in the question and choose local images in the scene to ask answer particular questions. 
 
-Visual Madlibs[6]: In Visual madlibs people generate fill in the blank question answer pairs which can be used in deep learning models to understand more about systems
-
-VQA[1] is a dataset that has a series of non-trivial questions about the images that are contained within. They also contain Mulitiple Choice along with Open Ended question
-Visual Genome Project is a similar dataset that contains a list of relationships between objects in images, that potentially could benefit large scale scene understanding.
-
+Through the rest of this article, we will focus on the VQA dataset and use it as a baseline model on which to build our system.
 
 ###Algorithm
-There are three methods that we are going to discuss. We are using the VQA dataset as a database to train our models. The network was trained on the Real images section of VQA and under the Open Ended set of questions. We have 3 training questions for each image in the dataset
+There are three methods that we are going to discuss. The first is a baseline test of passing a series of Convolution based features to an LSTM and training it to output a bag of words which forms the sentence. The second method uses the a combination of image features and a 1-of-k representation of the first word input to the LSTM which then generates the output. The second uses a 1 * 1 *1024 dimension Word2Vec output which is then multiplied with the CNN features to create an input to the LSTM.
 
 We used a Bidirectional LSTM to model our language 2 * 2 * 512. The output of the LSTM is always a bag of words feature that the user means to ask. The final layer of the LSTM is equal to the longest sentence in the input. A special start and stop symbol is added to the input bag of words. The Convolutional Features are selected by trying to align with the words in the question to develop a model as to when to ask which question. We are trying to align the words in the questions to the output of the images similar to the method in Deep Visual Alignments, Karpathy et. al [2]
 
-The first is a baseline test of passing a series of Convolution based features to an LSTM and training it to output a bag of words which forms the sentence. The second method uses the a combination of image features and a 1-of-k representation of the first word input to the LSTM which then generates the output. The second uses a 1 * 1 *1024 dimension Word2Vec output which is then multiplied with the CNN features to create an input to the LSTM.
+We are using the VQA dataset as a database to train our models. The network was trained on the Real images section of VQA and under the Open Ended set of questions. We have 3 training questions for each image in the dataset
 
 
 ###Network Description
@@ -50,6 +48,7 @@ The work was done in Torch and can be found [here](https://github.com/cjds/WhatI
 
 ###Results
 
+<img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/version.png' style="margin-top:50px"/>
 
 The results were mixed with all images generating questions, but the variation in the questions not being large. Over 60% of the questions generated are in the form "What is the man _____", which overall while being a valid question lacks the depth to create a database from.
 
