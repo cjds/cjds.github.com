@@ -6,14 +6,13 @@ categories : [image recognition,machine learning]
 
 
 ###Motivation
-The problem of algorithm truly understanding a scene is still unsolved and current databses with images and questions are still unsolved. Perhaps if we can train on a much larger series of questions, we will be able to acheive better results. For this reason, I propose creating a artificial dataset of natural language questions about images.
+In this article, I am proposing an algorithm for creating a series of questions about a natural image. There has been a recent interest in problems in multi-modal AI and specifically in the combination of Computer Vision with NLP. There have been multiple datasets (VQA and Visual Madlibs) that attempt to have a series of question and answer pairs for an image. Instead of curating question answer pairs, if we could generate a large number of questions about images, I contend that our algorithms would stand a better chance of solving multi-modal AI problems like commonsense reasoning and question answering. 
 
 ###Introduction
 
-There aew a string of successes in using deep learning for object recognition and image captioning among other tasks.
-However, algorithms that can perform complete scene understanding is still unsolved. Our focus is on generating large datasets of questions for images to train on. The idea behind this, is that if an algorithm could ask a series of questions about images that it's seeing, it could potentially one day learn how to answer them.
+There are a string of successes in using deep learning for object recognition and image captioning among other tasks. However the state of the art in answering open ended questions lies around 60% (for the VQA dataset). I propose that by greatly increasing the number of questions about each image, and by having the ability to ask questions about other images we will see the number of correct answers jump by a large factor.
 
-The sapce for asking questions however, is much larger than the space of answers. (For any given question there are just a few non-trivial). However, the number of questions one can ask about a given scene is nearly infinite.
+However, the sapce for asking questions is much larger than the space of answers. The number of questions that one can ask about a scene is nearly infinite and varied. For any given question on the other hand there are a few plausible answers. For this reason I developed a system, where for any given image you can generate a question and manipulate the first word of the input to generate more questions. 
 
 ###Related Work
 
@@ -29,7 +28,7 @@ Visual Genome Project is a similar dataset that contains a list of relationships
 
 
 ###Algorithm
-There are three methods that we are going to discuss. We are using the VQA dataset as a database to train our models. As such, we have 3 training questions for each question. 
+There are three methods that we are going to discuss. We are using the VQA dataset as a database to train our models. The network was trained on the Real images section of VQA and under the Open Ended set of questions. We have 3 training questions for each image in the dataset
 
 We used a Bidirectional LSTM to model our language 2 * 2 * 512. The output of the LSTM is always a bag of words feature that the user means to ask. The final layer of the LSTM is equal to the longest sentence in the input. A special start and stop symbol is added to the input bag of words. The Convolutional Features are selected by trying to align with the words in the question to develop a model as to when to ask which question. We are trying to align the words in the questions to the output of the images similar to the method in Deep Visual Alignments, Karpathy et. al [2]
 
@@ -44,11 +43,14 @@ I used the VGG-net 16 as a CNN to generate the image features. The features are 
 I used stochastic gradient descent to backpropogate in the Convolutional network and RMS Prop in the RNN. The size of the final dataset used was 50,000 images, each with 3 captions for each question. The training was run for 100 epochs and the training error was calculated at every 1000 iterations. The images were split into batches of 16 for minimizing training time.
 
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/training error .png' style="margin-top:50px"/>
-The work was done in Torch and can be found [here(latest code coming soon)](https://github.com/cjds/WhatIsTheMan)
+
+Error was calculated as the deviation of each word from the output that we are training on. 
+
+The work was done in Torch and can be found [here](https://github.com/cjds/WhatIsTheMan)
 
 ###Results
 
-The network was trained on the Real images section of VQA and under the 
+
 The results were mixed with all images generating questions, but the variation in the questions not being large. Over 60% of the questions generated are in the form "What is the man _____", which overall while being a valid question lacks the depth to create a database from.
 
 This is the spread of the number of words in each of the three methods compared with the original dataset is here. We are trying to model the distribution of sentence lengths in blue. As can be seen there is a marked difference between the Word2Vec model vs the image alone, which is suggestive that Word2Vec might be more accurate.
