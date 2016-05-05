@@ -78,3 +78,5 @@ The bag-of-words method clearly performs the best of all the methods, however to
 [5]Li Fei-Fei, et al. "Visual Genome: Connecting Language and Vision Using Crowdsourced Dense Image Annotations"
 
 [6]Alexander Berg, Tamara L. Berg, et al. "Visual Madlibs: Fill in the blank Image Generation and Question Answering" arXiv preprint 2015 
+
+[7]Zhu, Yuke, et al. "Visual7W: Grounded Question Answering in Images." arXiv preprint arXiv:1511.03416 (2015)
