@@ -44,7 +44,7 @@ I used the VGG-net 16 as a CNN to generate the image features. The features are 
 I used stochastic gradient descent to backpropogate in the Convolutional network and RMS Prop in the RNN. The size of the final dataset used was 50,000 images, each with 3 captions for each question. The training was run for 100 epochs and the training error was calculated at every 1000 iterations. The images were split into batches of 16 for minimizing training time.
 
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/training error .png' style="margin-top:50px"/>
-The work was done in Torch and can be found [https://github.com/cjds/WhatIsTheMan](here(latest code coming soon))
+The work was done in Torch and can be found [here(latest code coming soon)](https://github.com/cjds/WhatIsTheMan)
 
 ###Results
 
