@@ -33,42 +33,42 @@ There are three methods that we are going to discuss. We are using the VQA datas
 
 We used a Bidirectional LSTM to model our language 2 * 2 * 512. The output of the LSTM is always a bag of words feature that the user means to ask. The final layer of the LSTM is equal to the longest sentence in the input. A special start and stop symbol is added to the input bag of words. The Convolutional Features are selected by trying to align with the words in the question to develop a model as to when to ask which question. We are trying to align the words in the questions to the output of the images similar to the method in Deep Visual Alignments, Karpathy et. al [2]
 
-The first is a baseline test of passing a series of Convolution based features to an LSTM and training it to output a bag of words which forms the sentence. The second method uses the a combination of image features and a bag of words input to the LSTM which then generates the output. The second uses a 1 * 1 *512 dimension Word2Vec output which is then multiplied with the CNN features to create an input to the LSTM.
+The first is a baseline test of passing a series of Convolution based features to an LSTM and training it to output a bag of words which forms the sentence. The second method uses the a combination of image features and a 1-of-k representation of the first word input to the LSTM which then generates the output. The second uses a 1 * 1 *1024 dimension Word2Vec output which is then multiplied with the CNN features to create an input to the LSTM.
 
 
 ###Network Description
-I used the VGG-net 16 as a CNN to generate the image features.2
+I used the VGG-net 16 as a CNN to generate the image features. The features are connected from the last fully connected layer. This is 4096 dimensional feature vector which is fused with the Word2Vec input using element-wise multiplication, similar to that seen in the VQA dataset. With the bag of words encoding, the input is transformed into a 1024 vector with one fully connected layer which is then input into the LSTM
 
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/network.png' style="margin-top:50px"/>
 
 I used stochastic gradient descent to backpropogate in the Convolutional network and RMS Prop in the RNN. The size of the final dataset used was 50,000 images, each with 3 captions for each question. The training was run for 100 epochs and the training error was calculated at every 1000 iterations. The images were split into batches of 16 for minimizing training time.
 
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/training error .png' style="margin-top:50px"/>
-
-
-The work was done in Torch and can be found here
-
+The work was done in Torch and can be found [https://github.com/cjds/WhatIsTheMan](here(latest code coming soon))
 
 ###Results
 
 The network was trained on the Real images section of VQA and under the 
 The results were mixed with all images generating questions, but the variation in the questions not being large. Over 60% of the questions generated are in the form "What is the man _____", which overall while being a valid question lacks the depth to create a database from.
 
-This is the spread of the number of words in each of the three methods compared with the original dataset is here.
+This is the spread of the number of words in each of the three methods compared with the original dataset is here. We are trying to model the distribution of sentence lengths in blue. As can be seen there is a marked difference between the Word2Vec model vs the image alone, which is suggestive that Word2Vec might be more accurate.
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/sentence distribution.png' style="margin-top:50px"/>
 
 
-I, then took 50 questions from each of the 4 sets and rated whether the question was indeed plausible for the images.The results are shown below. 
+I, then took 50 questions from each of the 4 sets and rated whether the question was indeed plausible for the images.The results are shown below. (Question represents the original dataset, which at 49 is always plausible) 
 
 <img src='{{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/number.png' style="margin-top:50px"/>
 
+Again, the Word2Vec method beat out the competition to acheive a much higher score than all others suggesting that this feature encoding holds promise for more work in the future
 
 ###Conclusions
-The bag-of-words method clearly performs the best of all the methods
+The bag-of-words method clearly performs the best of all the methods, however to ask questions due to their very nature new methods will have to be developed. This is insufficient to capture the space of questions that one can truly ask. Future work may go into how to use the bag of words to cause enough jitter to still ask sensible questions and artifically increase size that way
 
 ###References
 
-[1]
+[1]Antol, Stanislaw, et al. "VQA: Visual question answering." Proceedings of the IEEE International Conference on Computer Vision. 2015.
+
+[2]Karpathy, Andrej, and Li Fei-Fei. "Deep visual-semantic alignments for generating image descriptions." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015.
 
 [3]Mitkov, R., & Ha, L. A. (2003, May). Computer-aided generation of multiple-choice tests. In Proceedings of the HLT-NAACL 03 workshop on Building educational applications using natural language processing-Volume 2 (pp. 17-22). Association for Computational Linguistics.
 
