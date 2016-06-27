@@ -76,7 +76,7 @@ Games against genetic algorithm
 
 ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/fitnessovertime1.png)
 
-####Fitness function that considers only goal scoring
+Fitness function that considers only goal scoring
 
 ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/goal difference over time.png)
 
