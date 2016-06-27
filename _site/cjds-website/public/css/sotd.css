@@ -1,0 +1,175 @@
+		@import url(http://fonts.googleapis.com/css?family=Lora);
+		@font-face {
+			font-family:LeagueGothic;
+			src:url('LeagueGothic-Regular.otf');
+		}
+
+		@font-face{
+			font-family: Mohave;
+			src:url(Mohave-Bold.otf);
+		}
+
+		h3,h1{
+			font-family: Mohave;
+		}
+
+
+		h3{
+			color:#b22;
+			margin-bottom: 0.2em;
+		}
+
+		hr.songtitlehr{
+			border: 1px solid #999;
+			margin: 0px;
+		}
+
+		 hr.songtitlehr{
+		 	border: 1px solid #222;
+  		 	margin: auto;
+  		 }
+
+		.top-bar-section li:not(.has-form) a:not(.button){
+			background: #fff;
+			color: #333;
+		}
+
+
+
+		div.headtext{
+			font-family:"rockwell";
+			font-size: 60px;
+		   	color: #000;
+		   	margin-top: 100px;
+		   	margin-bottom: 100px;
+		   	height: 200px;
+		}
+
+
+
+		.top-bar{
+			background-color:#fff;
+			color:#000;
+		}
+
+		.top-bar .name h1 a{
+			color:#333;
+			font-size: 1.4rem;
+		}
+
+
+		.top-bar .name h1 a:hover{
+			color:#b22;
+		}
+
+
+		.top-bar .right li a{
+			color:#333;
+			font-size: 1.4rem;
+		}
+
+		.top-bar .toggle-topbar.menu-icon a{
+			color:#333;
+		}
+
+		.para{
+			font-family: Lora
+		}
+
+  		.songtitle{
+  			font-family: Mohave;
+  			font-size: 1.8em;
+  			margin-top: 10px;
+  			margin-bottom: 0px;
+  			text-align: center;display: inline-block;
+  		}
+
+  		.songartist{
+  			font-family: LeagueGothic;
+  			font-size: 1.2em;
+  			text-align: center;
+  		}
+
+
+  		.sotd{
+  			font-family: LeagueGothic;
+  			font-weight: 500;	
+  			font-size: 1.5em;
+  			margin-top: 0;
+  			margin-bottom: 1.25em;
+  			text-align: center;
+  		}
+  		.sotd2{
+  			font-family: LeagueGothic;
+  			font-weight: 500;	
+  			font-size: 1.5em;
+  			margin-bottom: 0;
+  			margin-top: 1.25em;
+  			text-align: center;
+  		}
+
+  		
+
+		.line{
+			display: table; 
+			margin: 0 auto; 
+
+			padding-top: 20px;
+			border-bottom: 1px solid #aaa;
+		}
+
+  		 .line img{
+  		 	border: 1px #ccc solid;
+  		 	margin-bottom: 25px;
+  		 	transition: all 0.5s;
+  		 }
+
+  		 .line img:hover{
+  		 	cursor: pointer;
+  		 	opacity: 0.75;
+  		 	  		 }
+
+
+@media only screen and (max-width: 40em) {
+	  	.line img{
+  		 	width:60%;
+  		 	margin-right: 20%;
+  		 	margin-left: 20%;
+  		 	display: block;
+  		 }
+}
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+		.line img{
+  		 	width:100px;
+  		 	margin-right: 10px;
+  		 	margin-left: 10px;
+  		 	display: inline-block;
+  		 }
+}
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+		.line img{
+  		 	width:150px;
+  		 	margin-right: 25px;
+  		 	margin-left: 25px;
+  		 	display: inline-block;
+  		 }
+
+ }
+@media only screen and (min-width: 90.063em) and (max-width: 120em) {
+		.line img{
+  		 	width:200px;
+  		 	margin-right: 25px;
+  		 	margin-left: 25px;
+  		 	display: inline-block;
+  		 }
+
+}
+
+@media only screen and (min-width: 120.063em) and (max-width: 99999999em) {
+	.line img{
+  		 	width:250px;
+  		 	margin-right: 25px;
+  		 	margin-left: 25px;
+  		 	display: inline-block;
+  		 }
+}

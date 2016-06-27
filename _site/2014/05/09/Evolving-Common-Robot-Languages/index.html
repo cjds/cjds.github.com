@@ -1,0 +1,422 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>-->
+	<script type="text/javascript" href="/js/foundation.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.js"></script>
+
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?autoload=false"></script>
+		<link href='/css/prettify.css' rel='stylesheet' type='text/css'>
+	<title>Evolving Better Robotic Co-operation</title>
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+  
+
+
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100);
+
+
+@font-face {
+    font-family: Mohave;
+    src: url('/fonts/Mohave.otf');
+}
+
+ol li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+
+ ul li{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ }
+ p{
+ 	font-family: "Lora","Helvetica",Arial,sans-serif;
+ 	font-size: 1.1em;
+ 	color:#344;
+ 	text-align:justify;
+ 	margin-top:10px;
+ 	margin-bottom: 20px;
+ }
+
+
+
+.body-code{
+	position: absolute;
+	bottom: 0;
+	top:40px;
+	width:100%;
+}
+.fun-heading {
+	height:100%;
+
+	margin-top: 0px;
+/*	box-shadow: -10px 0px 5px 0px rgba(0, 0, 0, 0.2);;*/
+
+}
+
+hr { 
+	display: block; height: 1px;
+    border: 0; border-top: 1px solid #000;
+    margin: 1em 0; padding: 0; opacity: 0.2;}
+
+.fun-heading ul {
+	margin-left: 0;
+}
+.fun-heading ul a li{
+	text-align: left;
+	font-family: 'Verdana',sans-serif;
+	font-weight: 500;
+	font-size: 1em;
+	line-height: 2em;
+	list-style: none;
+	color: #666;
+	margin: 10px;
+}
+.fun-heading ul a:hover{
+	text-decoration: underline;
+}
+
+.fun-heading h1{
+	font-family: 'Roboto Slab',serif;
+	font-weight: 100;
+	font-size: 3.5em;	
+	color: #000;
+	opacity: 0.3;
+	margin-top: -0.1em;
+}
+
+ h1,h2,h3,h4,h5,h6{
+ 	/*font-weight: 900*/
+ }
+
+ h1{
+ 	margin-top: 1rem;
+ }
+
+h2{
+	color:#444;
+	font-family: 'Raleway', serif;
+	font-size: 1.8em;
+}
+
+h3{
+	font-size: 1.4em;
+}
+
+
+
+ hr{
+ 	margin:0px;
+ 	margin-bottom: 5px;
+ }
+
+
+ hr:not(:first-child){
+ 	margin: auto;
+ 	margin-top: 40px;
+ 	margin-bottom: 40px;
+ 	width: 160px;
+ }
+
+.top-bar{
+	background-color:#fff;
+	color:#000;
+}
+
+.top-bar .name h1 a{
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+
+.top-bar .name h1 a:hover{
+	color:#b22;
+}
+
+
+.top-bar .right li a{
+	background: #fff;
+	color:#333;
+	font-family:Mohave;
+	font-size: 1.4rem;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background: #fff;
+}
+
+.top-bar .right li a:hover{
+	text-decoration:underline;
+}
+.top-bar .toggle-topbar.menu-icon a{
+	color:#333;
+}
+
+
+/*
+.top-bar{
+	background-color:#fff;
+	position: absolute;
+	top:0;
+	box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, 0.2);
+	z-index: 2;
+	width: 100%;
+	height:40px;
+}
+ .top-bar >ul >li >h1 > a{
+ 	font-weight: 900 !important;
+ 	color:#000 !important;
+
+ }
+
+ code{
+ 	overflow: auto;
+
+ 	font-family: "Verdana","Helvetica",Arial,sans-serif;
+ 	color:#555;
+	background-color: #eee;
+	padding:0px 4px 3px 4px;
+	letter-spacing: 1px;
+	line-height: 130%;
+	word-spacing: 2px;
+	margin: 4px;
+	font-weight: normal;
+	font-size: 0.9em;
+ }
+
+ pre code{
+ 	padding:0px;
+	margin: 0px;
+	word-wrap: initial;
+	background:none !important;
+	
+ }
+
+pre{
+	background-color: #eee;
+	border-left:solid 5px #f00000 !important;
+	padding:6px;
+	margin: 6px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+*/
+
+pre{
+	background-color: #333;
+	padding:2px;
+	margin: 2px;
+	overflow-x:auto;
+	overflow-y: hidden;
+ }
+
+ .big img{
+ border-top: solid 1px #ccc;
+ width:100%;
+ 	margin: 0px auto;
+ 	box-shadow: 0px 5px 5px #aaa;
+ }
+
+ .image img{
+ 	margin: 10px auto 30px;
+ 	display: block;
+ }
+
+ .image p{
+	margin: 0px auto;
+ }
+
+ .caption p{
+ 	margin: 0px auto;
+ 	display: block;
+ 	font-size: 0.8em;
+ 	text-align: center;
+ 	margin-bottom: 25px;
+ }
+
+
+ .post-div{
+ 	padding: 25px;
+ 	margin-top: 50px;
+ 	border-top: solid 1px #ccc;
+ box-shadow: 0px 5px 5px #ccc;	
+ }
+
+ .post-div > h1{
+ 	margin-top: 10px;
+ 	margin-bottom: 1px;
+ 	font-family: 'Mohave';
+ 	text-align: center;
+ 	font-weight: 300
+
+ }
+
+ .top-bar .toggle-topbar a{
+ 	font-size: 1.4em;
+ 	color:#333;
+ 	font-weight: 300;
+ }
+
+</style>
+<body>
+
+<nav class="top-bar" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="http://carlsaldanha.com" style='text-align:left' >Carl Saldanha</a></h1>
+    </li>
+        <li class="toggle-topbar" style='font-family:Mohave;color:#666'><a href="#">Menu</a></li>
+
+  </ul>
+
+  <section class="top-bar-section">
+    
+    <ul class="right">
+
+      <li><a href="http://carlsaldanha.com/resume">Resume</a></li>
+      <li><a href="http://carlsaldanha.com/projects">Projects</a></li>
+
+      <li><a href="http://cjds.github.io/">Blog</a></li>
+      </li>
+    </ul>
+
+  </section>
+</nav>
+<div class='large-6 large-offset-3 medium-8 medium-offset-2 small-12 post-div'>
+<h1>Evolving Better Robotic Co-operation</h1>
+
+<hr>
+<p>Imagine trying to communicate with an alien species. For true communication, there needs to be a set of agreed upon symbols that both parties understand. These symbols must have identical or close to identical meanings so that everyone comprehends. Sharing this knowledge base of symbols between two entities is known as the symbol grounding problem. [6]</p>
+
+<p>Attempts to solve the symbol grounding problem in computer science have usually been represented as Language Games. These language games involve communication between agents to allow them to learn new words and associate meanings to word.
+The guessing game (L. Steels, 1995), is a game in which two bots tries to achieve shared attention and guess features of objects . They build a shared vocabulary by trying to talk about objects once each other is focused on the same object. An example of this is implemented in The Talking Heads Experiment.(L. Steels, 1999) Talking Heads was an experiment both in computer vision and cognitive programming. They were attempting to study the evolution of a shared lexicon. The robots evolved their vocabulary by observing a scene and communicating what they saw to each other.  The lingodroid robots (Schulz, 2011) develop their own language and perform spatial memory mapping using a shared lexicon. They are put in a space and develop new words from the space through sharing words. Every time they find themselves in a new space they invent a word for it. This allows them to map the space around them using this new shared lexicon. Thus cooperation was obtained via the shared lexicon. In a naming game (Stadler,2012) agents engage in local interactions where one of the agents who is the speaker, tries to draw the attention of other agents (listeners) to an  object in the surroundings by uttering a word. The agent fails the game if he does not understand the word the speaker said. However they both update their lexicons for future naming games, gradually learning the language.</p>
+
+<hr />
+
+<p>I believe that robots might not only benefit from being able to talk about objects in their environment but also about the things they are doing.  If robots make a particular motion or want a particular motion made they might communicate this to another robot. This second robot has to be able to understand the first robots command and take appropriate action. Working together the robots can communicate and cooperate effectively.</p>
+
+<p>The idea is to prove that agents are capable of cooperative tasks better with a communicating language. For this we have invented a language game to test the amount of cooperation they can possibly achieve. For the purposes of achieving proper communication the bots will have a limited set of possible actions. These atomic actions will be combined to give rise to more complex actions as the language evolves. Thus as the language evolves the agents will be able to perform more complex tasks with fewer utterances.
+The agents vocabulary will be limited to the task at hand. The communication will be limited to describing actions that he wishes performed. However the actions will be decided at runtime and the complexity of these actions will progressively increase. This will eventually allow the robots to plan for the entire task at hand before executing.</p>
+
+<h3>The Cooperation Game:</h3>
+
+<p>The basic game requires a task to be completed that requires actions from both agents. The agents have a limited set of actions they can perform. As these actions may not be identical in both agents a learning round is required so the agents can become familiar with the actions of its counterpart.</p>
+
+<p>Learning Rounds:
+Learning Rounds are before the actual task. In a learning round one agent performs a series of actions. Each of these are the basic atomic actions that that agent can perform. The other agent then will know these motions in the future games.</p>
+
+<p>After the learning round, the agents are made to play several test rounds to attempt to communicate efficiently. As they play they continue to learn, through co-evolution and reinforced learning.</p>
+
+<p>Game Rules:
+The agents are kept on an nxn board. The objective of the game is for the communicating agents to team up and defeat the non-communicating bots.</p>
+
+<p>Types Of Bots :
+Communicating Agents (CA)- Can Communicate and need to cooperate to win
+Non-Communicating Agents (NCA) - Cannot communicate but attack and can win on their own.</p>
+
+<p>Conditions for Victory:
+1. If a CA and a NCA are on adjacent squares the NCA defeats the CA and the CA dies.
+2. However, if two good bots (CA) are on squares adjacent to a NCA,, the CAs win and the NCA dies.</p>
+
+<p>In order for them to win the CAs must communicate and decide when to attack in unison. Only when the CAs are sure another CA will attack then they can proceed.</p>
+
+<h3>General Architecture Of a Solution:</h3>
+
+<p>Words:
+Words consist of syllables. There are a predefined set of syllables that the bot can use. These syllables are combined together to find combanitorial words. These are the basic words which are defined for any action. (K. Stadler, 2012)</p>
+
+<p>Sentences
+Sentences in the language have a rigid grammatical structure and are used to describe the situation. The sentence consists in the following structure.</p>
+
+<p><code>&lt;character&gt; &lt;expected-action&gt;</code></p>
+
+<p><code>&lt;character&gt;</code> : Refers to the character being described in the sentence. This character may be a good or bad bot. It may even refer to the speaking bot itself.</p>
+
+<p><code>&lt;expected-action&gt;:</code> Refers to the action the bot wishes to be performed by the aforementioned character.</p>
+
+<p>These sentences are kept with strict grammar to allow for more comprehension within the domain. Though there may be some merit to keeping a grammar fluid, we feel within the paradigm of any one task a strict grammar may lead to better communication.</p>
+
+<h3>Evolving a Common Language:</h3>
+
+<p>The bots need to form a lexicon such that particular words correspond to particular action sequences by them. Each agent maintains particular word-meaning pairs. They maintain how often the word has been used and also the probability that its meaning is correct.</p>
+
+<ol>
+<li><p>How the speaker chooses particular words
+The speaker wants a certain action to be completed. It looks up its lexicon for words that correspond to that particular action. There are 2 ways by which the speaker can decide on the word to choose.</p>
+
+<ol type="a">
+<li> Most Common Word: of all the words the agent knows for the intended action, it deterministically selects the one with the highest frequency, i.e. the one that the agent has most often seen being used for the topic by other speakers in previous interactions.</li>
+<li> Most Efficient Word: by the principle of least effort (1991, C. Brent) the speaker will speak the word with the least number of syllables.</li>
+</ol>
+
+
+<p>After the speaker speaks, it looks to the intended listener. If the listener does not perform the correct action it lowers the probability of that word being right. Otherwise it increases it.</p></li>
+<li><p>When the listener hears a particular word
+When the listener hears a particular word, he looks up that word in his dictionary
+If there is an action corresponding to that word with a sufficiently high probability then the agent executes that action. If no action has been decided the agent assumes an action based on the heuristic to complete the task. This is added to the lexicon with an extremely low probability.  NOTE: This may not necessarily be the correct action. However over time the heuristic assures that the agent will assume the correct action.</p></li>
+<li><p>Evolving Complexity of the language:
+Once all action sequences are defined with a high enough probability the agents start creating words for new actions sequences (combinations of the previous actions). Eventually over time the language increases in complexity and the agents are able to perform extremely complex actions</p></li>
+</ol>
+
+
+<h3>Limitations</h3>
+
+<ol>
+<li>The set of actions is limited to the actions the bot can perceive. This deterministic approach to word building would fail in a world with innumerable actions.</li>
+<li>There is no case of relativity in the words. For example the botcan’t suggest lists of moves with their probable goodness or badness. It can’t explain why its choosing certain actions or what its plan is.</li>
+<li>There is no long term planning possible. The bots can only think logically ahead for a few moves. They cannot for example, trap the Sith in corners or come at the Sith from multiple locations. They can only communicate in the short term.</li>
+</ol>
+
+
+<h3>References</h3>
+
+<p>[1] Schulz, Ruth, et al. "Lingodroids: Studies in spatial cognition and language." Robotics and Automation (ICRA), 2011 IEEE International Conference on. IEEE, 2011.</p>
+
+<p>[2] Steels, Luc. "Language games for autonomous robots." IEEE Intelligent systems 16.5 (2001): 16-22.</p>
+
+<p>[3] Heath, Scott, et al. "Communication between Lingodroids with different cognitive capabilities." Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013.</p>
+
+<p>[4] Steels, Luc, and Jean-Christophe Baillie. "Shared grounding of event descriptions by autonomous robots." Robotics and autonomous systems 43.2 (2003): 163-173.</p>
+
+<p>[5] L. Steels, The Talking Heads Experiment vol. I. Words and Meanings. Brussels: Best of Publishing, 1999.</p>
+
+<p>[6] Harnad, Stevan. "The symbol grounding problem." Physica D: Nonlinear Phenomena 42.1-3 (1990): 335-346.</p>
+
+<p>[7] Stadler, Kevin, Pieter Wellens, and Joachim De Beule. "The combinatorial naming game." Proceedings of the 21st Belgian-Dutch Conference on Machine Learning (BeneLearn 2012)}. Vol. 3. IFAAMAS}, 2012.</p>
+
+<hr>
+<i>09 May 2014 </i>
+</div>
+<script src="/js/foundation/foundation.js"></script>
+  <script src="/js/foundation/foundation.topbar.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+  
+<script type='text/javascript'>
+$( document ).ready(function(){
+
+
+  // Add pretty print to all pre and code tags.
+  $('pre, code').addClass("prettyprint");
+
+  // Remove prettify from code tags inside pre tags.
+  $('pre code').removeClass("prettyprint");
+
+  // Activate pretty presentation.
+  prettyPrint();
+});
+</script>
+</body>
+</html>
