@@ -32,7 +32,7 @@ Assuming you have android up and running create a new Android project in Eclipse
 Click File > New Android Application Project
 
 > %image%
-> ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/new project.png)
+> ![]({{site.url}}/assets/{{page.date| date: "%Y-%m-%d" }}/new%20project.PNG)
 
 
 Click Next and then Finish.
